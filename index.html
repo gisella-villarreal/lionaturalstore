@@ -54,40 +54,17 @@ header {
   z-index: 100;
 }
 
-/* ÁREA DEL LOGO (Imagen + Texto) */
+/* ÁREA DEL LOGO (Solo Imagen Tamaño Mediano) */
 .logo-area { 
   display: flex; 
   align-items: center; 
-  gap: 10px; 
   text-decoration: none; 
 }
 .brand-logo { 
-  height: 42px; 
+  height: 60px; /* Tamaño mediano para escritorio */
   width: auto; 
+  max-width: 220px;
   object-fit: contain; 
-}
-.logo-text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.logo-text { 
-  font-weight: 800; 
-  font-size: 1.4rem; 
-  letter-spacing: 0.5px; 
-  color: var(--bg-dark); 
-  line-height: 1;
-}
-.logo-text span { 
-  color: var(--accent-yellow); 
-}
-.logo-sub { 
-  font-size: 0.55rem; 
-  font-weight: 700; 
-  letter-spacing: 2px; 
-  text-transform: uppercase; 
-  color: var(--text-muted); 
-  margin-top: 3px;
 }
 
 .nav-menu { display: flex; gap: 20px; list-style: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; }
@@ -252,7 +229,7 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
   .hero-content h1 { font-size: 2.1rem; }
   .nav-menu { display: none; }
   header { padding: 12px 15px; }
-  .logo-text { font-size: 1.2rem; } /* Ajuste de fuente para celular */
+  .brand-logo { height: 48px; } /* Tamaño mediano equilibrado para celular */
   .newsletter-banner { flex-direction: column; text-align: center; }
 }
 </style>
@@ -268,11 +245,7 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
   <!-- HEADER -->
   <header>
     <a href="#" class="logo-area">
-      <img src="1791315196144.jpg" alt="Logo" class="brand-logo">
-      <div class="logo-text-container">
-        <div class="logo-text">LIONA<span>TURAL</span></div>
-        <div class="logo-sub">Store</div>
-      </div>
+      <img src="1791315196144.jpg" alt="Lionheart Athletics Logo" class="brand-logo">
     </a>
     <ul class="nav-menu">
       <li class="active">Home</li>
@@ -493,5 +466,4 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
 </div>
 
 </body>
-  </html>
-  
+</html>
