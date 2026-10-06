@@ -28,23 +28,18 @@ body { background-color: #f3f4f6; color: var(--text-main); display: flex; justif
   overflow-x: hidden;
 }
 
-/* TOP BAR */
+/* TOP BAR CENTRADO */
 .top-bar {
   background: var(--bg-dark);
   color: var(--accent-yellow);
   font-size: 0.75rem;
-  padding: 8px 25px;
+  padding: 10px 25px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
   font-weight: 700;
   text-align: center;
 }
-.top-bar-links { display: flex; gap: 20px; }
-.top-bar-links span { cursor: pointer; display: flex; align-items: center; gap: 5px; color: #9ca3af; }
-.top-bar-links span:hover { color: var(--white); }
 
 /* HEADER PRINCIPAL */
 header {
@@ -81,7 +76,7 @@ header {
 .cart-icon-btn { position: relative; font-size: 1.3rem; cursor: pointer; display: flex; align-items: center; }
 .cart-badge { position: absolute; top: -5px; right: -8px; background: var(--accent-yellow); color: #000; font-size: 0.6rem; font-weight: 800; padding: 1px 5px; border-radius: 50%; }
 
-/* HERO SECTION (Sin imagen de frasco) */
+/* HERO SECTION */
 .hero-section {
   background: linear-gradient(135deg, var(--bg-dark) 0%, #1f242d 100%);
   padding: 60px 30px;
@@ -114,40 +109,54 @@ header {
 .feature-item h4 { font-size: 0.8rem; font-weight: 700; color: var(--text-main); }
 .feature-item p { font-size: 0.7rem; color: var(--text-muted); }
 
-/* CATEGORÍAS (Línea compacta deslizable) */
+/* CATEGORÍAS (Circulares en una línea) */
 .section-container { padding: 40px 25px; }
 .section-main-title { text-align: center; font-size: 1.4rem; font-weight: 800; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 1px; position: relative; }
 .section-main-title::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 40px; height: 3px; background: var(--accent-yellow); }
 
-.categories-scroll {
+.categories-container {
   display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  scrollbar-width: none;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
 }
-.categories-scroll::-webkit-scrollbar { display: none; }
-.category-card-mini {
+.category-circle-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  flex: 1;
+}
+.cat-circle-img {
+  width: 55px;
+  height: 55px;
   background: #f9fafb;
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 15px;
-  min-width: 140px;
-  flex: 1;
-  text-align: center;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--bg-dark);
   transition: all 0.2s;
 }
-.category-card-mini:hover { border-color: var(--accent-yellow); }
-.cat-mini-img { font-size: 2.2rem; color: var(--bg-dark); margin-bottom: 8px; }
-.cat-mini-name { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--text-main); margin-bottom: 4px; }
-.cat-mini-link { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); text-decoration: none; }
+.category-circle-item:hover .cat-circle-img {
+  border-color: var(--accent-yellow);
+  background: var(--accent-yellow);
+}
+.cat-circle-name {
+  font-size: 0.55rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-main);
+  text-align: center;
+}
 
 /* TOP SELLING PRODUCTS (De a dos en celular) */
 .products-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
 .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-@media (min-width: 768px) {
-  .products-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
-}
 .product-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 12px; position: relative; display: flex; flex-direction: column; }
 .prod-badge { position: absolute; top: 8px; left: 8px; background: var(--accent-yellow); color: #000; font-size: 0.45rem; font-weight: 800; padding: 2px 5px; border-radius: 3px; text-transform: uppercase; }
 .prod-badge.sale { background: #ef4444; color: white; }
@@ -163,7 +172,7 @@ header {
 .add-cart-btn { background: var(--accent-yellow); color: #000; border: none; width: 100%; padding: 7px; font-weight: 800; font-size: 0.65rem; border-radius: 4px; cursor: pointer; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 4px; transition: background 0.2s; }
 .add-cart-btn:hover { background: var(--accent-yellow-hover); }
 
-/* TESTIMONIOS Y DEMÁS (Estilo de la imagen 4) */
+/* TESTIMONIOS Y SUSCRIPCIÓN */
 .testimonials-section {
   background: #f8fafc;
   padding: 40px 25px;
@@ -201,7 +210,12 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
 .footer-grid ul li:hover { color: white; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
 
-/* RESPONSIVE MÓVIL */
+/* RESPONSIVE MÓVIL Y ESCRITORIO */
+@media (min-width: 768px) {
+  .products-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .cat-circle-img { width: 80px; height: 80px; font-size: 2rem; }
+  .cat-circle-name { font-size: 0.75rem; }
+}
 @media (max-width: 768px) {
   .hero-content h1 { font-size: 2.1rem; }
   .nav-menu { display: none; }
@@ -216,11 +230,6 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
   <!-- TOP BAR CON ENVÍOS GRATIS -->
   <div class="top-bar">
     <div>🚚 Por compras mayores a $100.000 COP envíos gratis</div>
-    <div class="top-bar-links">
-      <span><i class="ph ph-headset"></i> Support</span>
-      <span><i class="ph ph-map-pin"></i> Track</span>
-      <span><i class="ph ph-user"></i> Login</span>
-    </div>
   </div>
 
   <!-- HEADER -->
@@ -250,7 +259,7 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
     </div>
   </header>
 
-  <!-- HERO SECTION (Sin frasco amarillo) -->
+  <!-- HERO SECTION -->
   <div class="hero-section">
     <div class="hero-content">
       <h1>FUEL YOUR <span>STRENGTH</span></h1>
@@ -291,46 +300,40 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
     </div>
   </div>
 
-  <!-- SHOP BY CATEGORY (En una sola línea compacta) -->
+  <!-- SHOP BY CATEGORY (Circulares en una línea) -->
   <div class="section-container">
     <h2 class="section-main-title">Shop By Category</h2>
-    <div class="categories-scroll">
-      <div class="category-card-mini">
-        <div class="cat-mini-img"><i class="ph-fill ph-jar"></i></div>
-        <div class="cat-mini-name">Protein</div>
-        <a href="#" class="cat-mini-link">VIEW ALL →</a>
-      </div>
-      <div class="category-card-mini">
-        <div class="cat-mini-img"><i class="ph-fill ph-lightning"></i></div>
-        <div class="cat-mini-name">Pre-Workout</div>
-        <a href="#" class="cat-mini-link">VIEW ALL →</a>
-      </div>
-      <div class="category-card-mini">
-        <div class="cat-mini-img"><i class="ph-fill ph-capsule"></i></div>
-        <div class="cat-mini-name">Amino Acids</div>
-        <a href="#" class="cat-mini-link">VIEW ALL →</a>
-      </div>
-      <div class="category-card-mini">
-        <div class="cat-mini-img"><i class="ph-fill ph-drop"></i></div>
-        <div class="cat-mini-name">Vitamins</div>
-        <a href="#" class="cat-mini-link">VIEW ALL →</a>
-      </div>
-      <div class="category-card-mini">
-        <div class="cat-mini-img"><i class="ph-fill ph-cup"></i></div>
-        <div class="cat-mini-name">Accessories</div>
-        <a href="#" class="cat-mini-link">VIEW ALL →</a>
-      </div>
+    <div class="categories-container">
+      <a href="#" class="category-circle-item">
+        <div class="cat-circle-img"><i class="ph-fill ph-jar"></i></div>
+        <div class="cat-circle-name">Protein</div>
+      </a>
+      <a href="#" class="category-circle-item">
+        <div class="cat-circle-img"><i class="ph-fill ph-lightning"></i></div>
+        <div class="cat-circle-name">Pre-Workout</div>
+      </a>
+      <a href="#" class="category-circle-item">
+        <div class="cat-circle-img"><i class="ph-fill ph-capsule"></i></div>
+        <div class="cat-circle-name">Aminos</div>
+      </a>
+      <a href="#" class="category-circle-item">
+        <div class="cat-circle-img"><i class="ph-fill ph-drop"></i></div>
+        <div class="cat-circle-name">Vitamins</div>
+      </a>
+      <a href="#" class="category-circle-item">
+        <div class="cat-circle-img"><i class="ph-fill ph-cup"></i></div>
+        <div class="cat-circle-name">Gear</div>
+      </a>
     </div>
   </div>
 
-  <!-- TOP SELLING PRODUCTS (De a dos en celular) -->
+  <!-- TOP SELLING PRODUCTS -->
   <div class="section-container" style="padding-top: 0;">
     <div class="products-header-row">
       <h2 class="section-main-title" style="margin-bottom: 0; text-align: left;">Top Selling Products</h2>
       <a href="#" style="font-size: 0.75rem; font-weight: 800; color: var(--text-main); text-decoration: none;">VIEW ALL →</a>
     </div>
     <div class="products-grid">
-      <!-- Producto 1 -->
       <div class="product-card">
         <span class="prod-badge">BEST SELLER</span>
         <div class="prod-img"><i class="ph-fill ph-jar"></i></div>
@@ -342,7 +345,6 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
         </div>
         <button class="add-cart-btn"><i class="ph ph-shopping-cart"></i> ADD TO CART</button>
       </div>
-      <!-- Producto 2 -->
       <div class="product-card">
         <span class="prod-badge sale">20% OFF</span>
         <div class="prod-img"><i class="ph-fill ph-capsule"></i></div>
@@ -355,7 +357,6 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
         </div>
         <button class="add-cart-btn"><i class="ph ph-shopping-cart"></i> ADD TO CART</button>
       </div>
-      <!-- Producto 3 -->
       <div class="product-card">
         <span class="prod-badge new">NEW</span>
         <div class="prod-img"><i class="ph-fill ph-jar"></i></div>
@@ -367,7 +368,6 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
         </div>
         <button class="add-cart-btn"><i class="ph ph-shopping-cart"></i> ADD TO CART</button>
       </div>
-      <!-- Producto 4 -->
       <div class="product-card">
         <div class="prod-img"><i class="ph-fill ph-lightning"></i></div>
         <div class="prod-title">BCAA 2:1:1</div>
@@ -381,7 +381,7 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
     </div>
   </div>
 
-  <!-- TESTIMONIOS Y SUSCRIPCIÓN (Estilo imagen 4) -->
+  <!-- TESTIMONIOS Y SUSCRIPCIÓN -->
   <div class="testimonials-section">
     <div style="text-align: center; margin-bottom: 25px;">
       <h3 class="trusted-header">Trusted by Athletes. Proven in Performance.</h3>
@@ -458,4 +458,4 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
 
 </body>
   </html>
-          
+  
