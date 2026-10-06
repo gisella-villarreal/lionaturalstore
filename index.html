@@ -3,414 +3,319 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brew & Bliss | Coffee House</title>
+<title>Lionatural Store | Supplements & Wellness</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
 <style>
 :root {
-  --bg-color: #fcf9f5;
-  --primary-dark: #3b2314;
-  --accent: #c68b59;
-  --accent-light: #f4e8dc;
+  --bg-color: #f4f7f4;
+  --primary: #2d6a4f;
+  --primary-dark: #1b4332;
+  --accent: #52b788;
   --white: #ffffff;
-  --text-main: #2d2d2d;
-  --text-muted: #7d7d7d;
-  --border: #f0eae1;
+  --text-main: #212529;
+  --text-muted: #6c757d;
+  --border: #dee2e6;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
-body { background-color: #222; color: var(--text-main); display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px 0; }
+body { background-color: #121f17; color: var(--text-main); padding: 20px 0; display: flex; justify-content: center; }
 
-/* CONTENEDOR SIMULADOR MÓVIL */
-.phone-frame {
+.main-container {
   width: 100%;
-  max-width: 410px;
+  max-width: 1200px;
   background-color: var(--bg-color);
-  min-height: 840px;
-  border-radius: 40px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
   overflow: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 80px; /* Espacio para barra inferior */
 }
 
-/* HEADER */
-header {
-  padding: 15px 20px;
+/* TOP BAR */
+.top-bar {
+  background: var(--primary-dark);
+  color: #d8f3dc;
+  font-size: 0.75rem;
+  padding: 8px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--bg-color);
 }
-.header-left, .header-right { display: flex; align-items: center; gap: 15px; font-size: 1.3rem; color: var(--primary-dark); cursor: pointer; }
-.logo-container { text-align: center; }
-.logo-title { font-size: 1.3rem; font-weight: 800; color: var(--primary-dark); letter-spacing: -0.5px; }
-.logo-sub { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); font-weight: 600; }
-.badge-count {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background: var(--accent);
-  color: white;
-  font-size: 0.6rem;
-  padding: 2px 5px;
-  border-radius: 50%;
-  font-weight: 700;
-}
-.icon-wrap { position: relative; }
+.top-bar-links { display: flex; gap: 20px; }
+.top-bar-links span { cursor: pointer; }
 
-/* SEARCH BAR */
-.search-container {
-  padding: 0 20px 15px;
+/* HEADER PRINCIPAL */
+header {
+  padding: 15px 30px;
   display: flex;
-  gap: 10px;
-}
-.search-box {
-  flex: 1;
+  justify-content: space-between;
+  align-items: center;
   background: var(--white);
+  border-bottom: 1px solid var(--border);
+  gap: 20px;
+}
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.4rem; color: var(--primary-dark); }
+.logo i { color: var(--primary); font-size: 1.8rem; }
+.search-bar-wrap {
+  flex: 1;
+  max-width: 500px;
+  background: #f8f9fa;
   border: 1px solid var(--border);
   border-radius: 30px;
-  padding: 10px 15px;
   display: flex;
   align-items: center;
+  padding: 8px 15px;
   gap: 10px;
-  color: var(--text-muted);
-  font-size: 0.85rem;
 }
-.search-box input { border: none; outline: none; width: 100%; background: transparent; font-size: 0.85rem; color: var(--text-main); }
-.filter-btn {
-  background: var(--white);
-  border: 1px solid var(--border);
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
+.search-bar-wrap input { border: none; outline: none; width: 100%; background: transparent; font-size: 0.9srem; }
+.search-btn { background: var(--primary); color: white; border: none; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.header-actions { display: flex; align-items: center; gap: 20px; font-size: 0.85rem; font-weight: 600; color: var(--text-main); }
+.header-icon-badge { position: relative; font-size: 1.3rem; cursor: pointer; color: var(--primary-dark); }
+.badge { position: absolute; top: -6px; right: -8px; background: var(--accent); color: white; font-size: 0.6rem; padding: 2px 5px; border-radius: 50%; font-weight: 700; }
+
+/* CATEGORIAS SECUNDARIAS */
+.sub-nav {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary-dark);
-  font-size: 1rem;
-  cursor: pointer;
+  justify-content: space-around;
+  background: var(--white);
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  gap: 15px;
 }
+.sub-nav-item { display: flex; flex-direction: column; align-items: center; gap: 5px; cursor: pointer; min-width: 70px; }
+.sub-nav-icon { width: 45px; height: 45px; background: #e8f5e9; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--primary); }
+.sub-nav-item span { font-size: 0.7rem; font-weight: 700; color: var(--text-muted); }
 
 /* HERO BANNER */
-.hero-banner {
-  margin: 0 20px 20px;
-  background: linear-gradient(135deg, #23150d 0%, #4a2c1d 100%);
+.hero-section {
+  margin: 25px 30px;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
   border-radius: 20px;
-  padding: 20px;
+  padding: 40px;
   color: white;
-  position: relative;
-  overflow: hidden;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.hero-text h3 { font-size: 0.75rem; font-weight: 400; opacity: 0.8; font-style: italic; }
-.hero-text h1 { font-size: 1.35rem; font-weight: 800; margin-bottom: 5px; line-height: 1.2; }
-.hero-text p { font-size: 0.65rem; opacity: 0.75; margin-bottom: 15px; max-width: 160px; line-height: 1.4; }
-.btn-order {
-  background: var(--accent);
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.65rem;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  cursor: pointer;
-}
-.hero-img img { width: 110px; height: 110px; object-fit: cover; border-radius: 50%; border: 3px solid rgba(255,255,255,0.1); }
-.dots { display: flex; gap: 4px; justify-content: center; margin-bottom: 15px; }
-.dot { width: 6px; height: 6px; background: var(--border); border-radius: 50%; }
-.dot.active { width: 18px; background: var(--accent); border-radius: 4px; }
+.hero-content h3 { font-size: 0.85rem; letter-spacing: 2px; opacity: 0.85; margin-bottom: 5px; color: #b7e4c7; }
+.hero-content h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
+.hero-content p { font-size: 0.9rem; opacity: 0.9; margin-bottom: 20px; max-width: 400px; }
+.hero-btn { background: var(--white); color: var(--primary-dark); border: none; padding: 10px 20px; border-radius: 30px; font-weight: 800; font-size: 0.85rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+.hero-devices { font-size: 6rem; display: flex; gap: 15px; color: rgba(255,255,255,0.9); }
 
-/* CATEGORY SCROLLER */
-.categories-scroll {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  padding: 0 20px 20px;
-  scrollbar-width: none;
-}
-.categories-scroll::-webkit-scrollbar { display: none; }
-.cat-item { display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; min-width: 60px; }
-.cat-circle {
-  width: 55px;
-  height: 55px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  color: var(--primary-dark);
-  transition: all 0.2s;
-}
-.cat-item:hover .cat-circle, .cat-item.active .cat-circle { background: var(--primary-dark); color: white; }
-.cat-name { font-size: 0.68rem; font-weight: 600; color: var(--text-main); }
+/* SECCIONES DE PRODUCTOS */
+.section-box { padding: 0 30px 30px; }
+.section-header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.section-title { font-size: 1.2rem; font-weight: 800; color: var(--primary-dark); }
+.view-all-link { font-size: 0.85rem; font-weight: 700; color: var(--primary); cursor: pointer; display: flex; align-items: center; gap: 4px; }
 
-/* SECTION TITLE */
-.section-header {
-  padding: 0 20px 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.section-title { font-size: 1rem; font-weight: 800; color: var(--primary-dark); }
-.view-all { font-size: 0.75rem; font-weight: 700; color: var(--accent); cursor: pointer; }
+.products-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 15px; }
+.product-card { background: var(--white); border-radius: 14px; padding: 15px; border: 1px solid var(--border); position: relative; }
+.badge-tag { position: absolute; top: 10px; left: 10px; background: var(--primary); color: white; font-size: 0.5rem; padding: 3px 6px; border-radius: 4px; font-weight: 800; text-transform: uppercase; }
+.product-img { height: 130px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--primary); background: #f8f9fa; border-radius: 10px; margin-bottom: 12px; }
+.product-name { font-size: 0.85rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px; }
+.product-desc { font-size: 0.7rem; color: var(--text-muted); margin-bottom: 8px; }
+.product-rating { font-size: 0.7rem; color: #f59e0b; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 3px; }
+.product-rating span { color: var(--text-muted); }
+.product-bottom { display: flex; justify-content: space-between; align-items: center; }
+.price { font-size: 0.95rem; font-weight: 800; color: var(--primary-dark); }
+.add-cart-btn { background: var(--primary); color: white; border: none; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 
-/* PRODUCTS GRID */
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  padding: 0 20px 20px;
-}
-.product-card {
-  background: var(--white);
-  border-radius: 16px;
-  padding: 12px;
-  border: 1px solid var(--border);
-  position: relative;
-}
-.tag-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: var(--primary-dark);
-  color: white;
-  font-size: 0.5rem;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.product-img-box {
-  width: 100%;
-  height: 100px;
-  background: #f7f3ec;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  color: var(--accent);
-  margin-bottom: 10px;
-}
-.product-name { font-size: 0.8rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 2px; }
-.product-desc { font-size: 0.62rem; color: var(--text-muted); margin-bottom: 8px; line-height: 1.2; }
-.product-rating { font-size: 0.65rem; color: #f59e0b; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 3px; }
-.product-rating span { color: var(--text-muted); font-weight: 400; }
-.product-footer { display: flex; justify-content: space-between; align-items: center; }
-.product-price { font-size: 0.85rem; font-weight: 800; color: var(--primary-dark); }
-.add-btn {
-  background: var(--primary-dark);
-  color: white;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  cursor: pointer;
-}
+/* BANNERS DOBLES */
+.dual-banners { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 0 30px 30px; }
+.promo-card { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); border-radius: 16px; padding: 25px; color: white; display: flex; justify-content: space-between; align-items: center; }
+.promo-card h4 { font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; margin-bottom: 5px; color: #b7e4c7; }
+.promo-card h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; }
+.promo-card p { font-size: 0.75rem; opacity: 0.9; margin-bottom: 15px; }
+.promo-btn { background: white; color: var(--primary-dark); border: none; padding: 6px 14px; border-radius: 20px; font-weight: 800; font-size: 0.7rem; cursor: pointer; }
 
-/* PROMO BANNER BOTTOM */
-.promo-small {
-  margin: 0 20px 20px;
-  background: var(--accent-light);
-  border-radius: 16px;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #ebd8c8;
-}
-.promo-small h4 { font-size: 0.65rem; text-transform: uppercase; color: var(--accent); font-weight: 800; letter-spacing: 1px; }
-.promo-small h2 { font-size: 1.1rem; font-weight: 800; color: var(--primary-dark); margin: 2px 0; }
-.promo-small p { font-size: 0.65rem; color: var(--text-muted); }
+/* FOOTER */
+footer { background: var(--primary-dark); color: #d8f3dc; padding: 40px 30px 20px; font-size: 0.8rem; }
+.newsletter-box { background: linear-gradient(90deg, #1b4332, #2d6a4f); border-radius: 14px; padding: 25px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; color: white; }
+.newsletter-input { display: flex; gap: 10px; background: white; padding: 5px; border-radius: 30px; width: 350px; }
+.newsletter-input input { border: none; outline: none; padding: 5px 15px; width: 100%; }
+.subscribe-btn { background: var(--accent); color: white; border: none; padding: 8px 20px; border-radius: 20px; font-weight: 700; cursor: pointer; }
 
-/* BOTTOM NAVIGATION BAR */
-.bottom-nav {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: var(--white);
-  border-top: 1px solid var(--border);
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10;
-}
-.nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  color: var(--text-muted);
-  font-size: 0.6rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-.nav-item i { font-size: 1.2rem; }
-.nav-item.active { color: var(--accent); }
-.nav-item.center-order {
-  background: var(--primary-dark);
-  color: white;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  justify-content: center;
-  margin-top: -22px;
-  box-shadow: 0 4px 10px rgba(59,35,20,0.3);
-}
-.nav-item.center-order i { font-size: 1.3rem; }
+.footer-grid { display: grid; grid-template-columns: repeat(4, 1fr) 1.5fr; gap: 30px; margin-bottom: 30px; }
+.footer-col h4 { color: white; font-size: 0.9rem; font-weight: 700; margin-bottom: 12px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-col ul li { cursor: pointer; }
+.footer-col ul li:hover { color: white; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; }
 </style>
 </head>
 <body>
 
-<div class="phone-frame">
+<div class="main-container">
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div>Free Shipping on Orders Over $50 | 100% Natural Quality</div>
+    <div class="top-bar-links">
+      <span>USD</span>
+      <span>Help</span>
+      <span>Track Order</span>
+    </div>
+  </div>
+
   <!-- HEADER -->
   <header>
-    <div class="header-left"><i class="ph ph-list"></i></div>
-    <div class="logo-container">
-      <div class="logo-title">Brew & Bliss</div>
-      <div class="logo-sub">Coffee House</div>
+    <div class="logo">
+      <i class="ph-fill ph-plant"></i>
+      <span>LIONATURAL</span>
     </div>
-    <div class="header-right">
-      <div class="icon-wrap"><i class="ph ph-bell"></i><span class="badge-count">3</span></div>
-      <div class="icon-wrap"><i class="ph ph-shopping-bag"></i><span class="badge-count">2</span></div>
+    <div class="search-bar-wrap">
+      <i class="ph ph-magnifying-glass" style="color: var(--text-muted);"></i>
+      <input type="text" placeholder="Search supplements, proteins, vitamins...">
+      <button class="search-btn"><i class="ph ph-arrow-right"></i></button>
+    </div>
+    <div class="header-actions">
+      <div style="display: flex; align-items: center; gap: 6px; cursor: pointer;"><i class="ph ph-user"><span>Sign In</span></i></div>
+      <div class="header-icon-badge"><i class="ph ph-bell"></i><span class="badge">2</span></div>
+      <div class="header-icon-badge"><i class="ph ph-shopping-cart"></i><span class="badge">3</span></div>
     </div>
   </header>
 
-  <!-- SEARCH BAR -->
-  <div class="search-container">
-    <div class="search-box">
-      <i class="ph ph-magnifying-glass" style="font-size: 1rem;"></i>
-      <input type="text" placeholder="Search coffee, food & more...">
-    </div>
-    <button class="filter-btn"><i class="ph ph-sliders-horizontal"></i></button>
+  <!-- SUB NAV CATEGORIAS -->
+  <div class="sub-nav">
+    <div class="sub-nav-item"><div class="sub-nav-icon"><i class="ph-fill ph-pill"></i></div><span>Proteínas</span></div>
+    <div class="sub-nav-item"><div class="sub-nav-icon"><i class="ph-fill ph-drop"></i></div><span>Vitaminas</span></div>
+    <div class="sub-nav-item"><div class="sub-nav-icon"><i class="ph-fill ph-fire"></i></div><span>Energía</span></div>
+    <div class="sub-nav-item"><div class="sub-nav-icon"><i class="ph-fill ph-heart"></i></div><span>Salud</span></div>
+    <div class="sub-nav-item"><div class="sub-nav-icon"><i class="ph-fill ph-leaf"></i></div><span>Orgánicos</span></div>
+    <div class="sub-nav-item"><div class="sub-nav-icon"><i class="ph-fill ph-barbell"></i></div><span>Deporte</span></div>
   </div>
 
   <!-- HERO BANNER -->
-  <div class="hero-banner">
-    <div class="hero-text">
-      <h3>Good Coffee</h3>
-      <h1>Good Vibes</h1>
-      <p>Freshly brewed coffee made to brighten your day.</p>
-      <button class="btn-order">ORDER NOW <i class="ph ph-arrow-right"></i></button>
+  <div class="hero-section">
+    <div class="hero-content">
+      <h3>PREMIUM WELLNESS</h3>
+      <h1>Fuel Your Body Naturally</h1>
+      <p>Discover clean supplements designed to elevate your performance and daily vitality.</p>
+      <button class="hero-btn">Shop Supplements <i class="ph ph-arrow-right"></i></button>
     </div>
-    <div class="hero-img">
-      <i class="ph-fill ph-coffee" style="font-size: 4rem; color: var(--accent); background: #fff; padding: 15px; border-radius: 50%;"></i>
-    </div>
-  </div>
-  <div class="dots">
-    <div class="dot active"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-  </div>
-
-  <!-- CATEGORIES -->
-  <div class="categories-scroll">
-    <div class="cat-item active">
-      <div class="cat-circle"><i class="ph-fill ph-coffee"></i></div>
-      <span class="cat-name">Coffee</span>
-    </div>
-    <div class="cat-item">
-      <div class="cat-circle"><i class="ph-fill ph-cookie"></i></div>
-      <span class="cat-name">Pastries</span>
-    </div>
-    <div class="cat-item">
-      <div class="cat-circle"><i class="ph-fill ph-hamburger"></i></div>
-      <span class="cat-name">Sandwich</span>
-    </div>
-    <div class="cat-item">
-      <div class="cat-circle"><i class="ph-fill ph-cake"></i></div>
-      <span class="cat-name">Desserts</span>
-    </div>
-    <div class="cat-item">
-      <div class="cat-circle"><i class="ph-fill ph-cup"></i></div>
-      <span class="cat-name">Drinks</span>
+    <div class="hero-devices">
+      <i class="ph-fill ph-plant"></i>
+      <i class="ph-fill ph-shield-check"></i>
     </div>
   </div>
 
-  <!-- SECTION HEADER -->
-  <div class="section-header">
-    <h2 class="section-title">Popular Picks</h2>
-    <span class="view-all">View All <i class="ph ph-caret-right"></i></span>
-  </div>
-
-  <!-- PRODUCTS GRID -->
-  <div class="products-grid">
-    <!-- Producto 1 -->
-    <div class="product-card">
-      <span class="tag-badge">Bestseller</span>
-      <div class="product-img-box"><i class="ph-fill ph-coffee"></i></div>
-      <div class="product-name">Cappuccino</div>
-      <div class="product-desc">Smooth espresso with steamed milk.</div>
-      <div class="product-rating"><i class="ph-fill ph-star"></i> 4.8 <span>(1.2K+)</span></div>
-      <div class="product-footer">
-        <span class="product-price">$3.99</span>
-        <button class="add-btn"><i class="ph ph-plus"></i></button>
+  <!-- TRENDING PRODUCTS -->
+  <div class="section-box">
+    <div class="section-header-bar">
+      <h2 class="section-title">Best Sellers</h2>
+      <span class="view-all-link">View All <i class="ph ph-caret-right"></i></span>
+    </div>
+    <div class="products-row">
+      <div class="product-card">
+        <span class="badge-tag">BESTSELLER</span>
+        <div class="product-img"><i class="ph-fill ph-jar"></i></div>
+        <div class="product-name">Whey Protein Isolate</div>
+        <div class="product-desc">Vanilla flavor • 2kg</div>
+        <div class="product-rating"><i class="ph-fill ph-star"></i> 4.9 <span>(1.5K)</span></div>
+        <div class="product-bottom"><span class="price">$49.99</span><button class="add-cart-btn"><i class="ph ph-plus"></i></button></div>
       </div>
-    </div>
-    <!-- Producto 2 -->
-    <div class="product-card">
-      <span class="tag-badge" style="background: var(--accent);">Chef's Pick</span>
-      <div class="product-img-box"><i class="ph-fill ph-muffin"></i></div>
-      <div class="product-name">Chocolate Muffin</div>
-      <div class="product-desc">Rich, moist & perfectly baked.</div>
-      <div class="product-rating"><i class="ph-fill ph-star"></i> 4.7 <span>(968+)</span></div>
-      <div class="product-footer">
-        <span class="product-price">$2.99</span>
-        <button class="add-btn"><i class="ph ph-plus"></i></button>
+      <div class="product-card">
+        <span class="badge-tag" style="background: var(--accent);">ORGANIC</span>
+        <div class="product-img"><i class="ph-fill ph-capsule"></i></div>
+        <div class="product-name">Omega 3 Fish Oil</div>
+        <div class="product-desc">Pure high potency • 120 caps</div>
+        <div class="product-rating"><i class="ph-fill ph-star"></i> 4.8 <span>(920)</span></div>
+        <div class="product-bottom"><span class="price">$24.99</span><button class="add-cart-btn"><i class="ph ph-plus"></i></button></div>
+      </div>
+      <div class="product-card">
+        <span class="badge-tag" style="background: var(--primary-dark);">ENERGY</span>
+        <div class="product-img"><i class="ph-fill ph-lightning"></i></div>
+        <div class="product-name">Clean Pre-Workout</div>
+        <div class="product-desc">Natural focus & endurance</div>
+        <div class="product-rating"><i class="ph-fill ph-star"></i> 4.7 <span>(640)</span></div>
+        <div class="product-bottom"><span class="price">$34.99</span><button class="add-cart-btn"><i class="ph ph-plus"></i></button></div>
+      </div>
+      <div class="product-card">
+        <span class="badge-tag">NEW</span>
+        <div class="product-img"><i class="ph-fill ph-moon"></i></div>
+        <div class="product-name">Magnesium Glycinate</div>
+        <div class="product-desc">Deep sleep & recovery</div>
+        <div class="product-rating"><i class="ph-fill ph-star"></i> 5.0 <span>(310)</span></div>
+        <div class="product-bottom"><span class="price">$19.99</span><button class="add-cart-btn"><i class="ph ph-plus"></i></button></div>
       </div>
     </div>
   </div>
 
-  <!-- PROMO BANNER BOTTOM -->
-  <div class="promo-small">
-    <div>
-      <h4>Weekend Special</h4>
-      <h2>20% OFF</h2>
-      <p>On all coffee orders this weekend</p>
+  <!-- DUAL PROMO BANNERS -->
+  <div class="dual-banners">
+    <div class="promo-card">
+      <div>
+        <h4>SPECIAL COMBO</h4>
+        <h2>MASSIVE ENERGY PACK</h2>
+        <p>Protein + Pre-workout bundle with 25% off.</p>
+        <button class="promo-btn">Shop Bundle</button>
+      </div>
+      <i class="ph-fill ph-fire" style="font-size: 3.5rem; opacity: 0.8;"></i>
     </div>
-    <i class="ph-fill ph-percent" style="font-size: 2.2rem; color: var(--accent);"></i>
+    <div class="promo-card" style="background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%);">
+      <div>
+        <h4>NEW FORMULA</h4>
+        <h2>PLANT-BASED PROTEIN</h2>
+        <p>Clean ingredients for maximum muscle recovery.</p>
+        <button class="promo-btn">Discover</button>
+      </div>
+      <i class="ph-fill ph-leaf" style="font-size: 3.5rem; opacity: 0.8;"></i>
+    </div>
   </div>
 
-  <!-- BOTTOM NAVIGATION -->
-  <div class="bottom-nav">
-    <div class="nav-item active">
-      <i class="ph-fill ph-house"></i>
-      <span>Home</span>
+  <!-- FOOTER -->
+  <footer>
+    <div class="newsletter-box">
+      <div>
+        <h3 style="color: white; margin-bottom: 4px;">Join Lionatural Club</h3>
+        <p style="font-size: 0.75rem; opacity: 0.9;">Get wellness tips, special subscriber discounts & early product access.</p>
+      </div>
+      <div class="newsletter-input">
+        <input type="email" placeholder="Enter your email address">
+        <button class="subscribe-btn">Join Now</button>
+      </div>
     </div>
-    <div class="nav-item">
-      <i class="ph ph-book-open"></i>
-      <span>Menu</span>
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li>Proteins</li>
+          <li>Vitamins</li>
+          <li>Best Sellers</li>
+          <li>Bundles</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li>Track Order</li>
+          <li>Returns</li>
+          <li>Help Center</li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li>Our Mission</li>
+          <li>Quality Standards</li>
+          <li>Careers</li>
+          <li>Press</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Mobile App</h4>
+        <p style="margin-bottom: 10px; font-size: 0.7rem;">Shop on the go</p>
+        <div style="display: flex; gap: 8px;"><span style="background: #1b4332; padding: 6px 12px; border-radius: 6px; cursor: pointer;">Google Play</span></div>
+      </div>
     </div>
-    <div class="nav-item center-order">
-      <i class="ph-fill ph-coffee"></i>
+    <div class="footer-bottom">
+      <div>© 2026 Lionatural Store. All rights reserved.</div>
+      <div>Secure Shopping • 100% Certified Organic</div>
     </div>
-    <div class="nav-item">
-      <i class="ph ph-gift"></i>
-      <span>Rewards</span>
-    </div>
-    <div class="nav-item">
-      <i class="ph ph-user"></i>
-      <span>Profile</span>
-    </div>
-  </div>
+  </footer>
 </div>
 
 </body>
-  </html>
-
-        
+                                                          </html>
+  
