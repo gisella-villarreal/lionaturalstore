@@ -3,425 +3,270 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lionatural Store | Supplements & Fitness</title>
+<title>Lionatural Store | Premium Supplement Products</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
 <style>
 :root {
-  --bg-color: #fafafa;
-  --primary-dark: #111111;
-  --accent: #f6b900;
-  --accent-light: #fff9e6;
+  --bg-color: #ffffff;
+  --bg-dark: #0a0a0c;
+  --primary-dark: #121216;
+  --accent-yellow: #f6b900;
+  --accent-blue: #00d2fc;
   --white: #ffffff;
-  --text-main: #212121;
-  --text-muted: #757575;
-  --border: #eeeeee;
+  --text-main: #1e1e24;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
-body { background-color: #1a1a1a; color: var(--text-main); display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px 0; }
+body { background-color: #111; color: var(--text-main); padding: 20px 0; display: flex; justify-content: center; }
 
-/* CONTENEDOR SIMULADOR MÓVIL */
-.phone-frame {
+.main-container {
   width: 100%;
-  max-width: 410px;
+  max-width: 1200px;
   background-color: var(--bg-color);
-  min-height: 840px;
-  border-radius: 40px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  border-radius: 16px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
   overflow: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 80px;
 }
 
-/* HEADER */
-header {
-  padding: 15px 20px;
+/* TOP BAR */
+.top-bar {
+  background: var(--bg-dark);
+  color: #9ca3af;
+  font-size: 0.75rem;
+  padding: 8px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--bg-color);
+  border-bottom: 2px solid var(--accent-yellow);
 }
-.header-left, .header-right { display: flex; align-items: center; gap: 15px; font-size: 1.3rem; color: var(--primary-dark); cursor: pointer; }
-.logo-container { text-align: center; }
-.logo-title { font-size: 1.2rem; font-weight: 800; color: var(--primary-dark); letter-spacing: -0.5px; }
-.logo-sub { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 2px; color: #b38600; font-weight: 700; }
-.badge-count {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background: var(--accent);
-  color: #111111;
-  font-size: 0.6rem;
-  padding: 2px 5px;
-  border-radius: 50%;
-  font-weight: 800;
-}
-.icon-wrap { position: relative; }
+.top-bar-links { display: flex; gap: 20px; }
+.top-bar-links span { cursor: pointer; color: var(--accent-blue); }
 
-/* SEARCH BAR */
-.search-container {
-  padding: 0 20px 15px;
+/* HEADER PRINCIPAL */
+header {
+  padding: 18px 30px;
   display: flex;
-  gap: 10px;
-}
-.search-box {
-  flex: 1;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 30px;
-  padding: 10px 15px;
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  color: var(--text-muted);
-  font-size: 0.85rem;
+  background: var(--bg-dark);
+  color: white;
 }
-.search-box input { border: none; outline: none; width: 100%; background: transparent; font-size: 0.85rem; color: var(--text-main); }
-.filter-btn {
-  background: var(--white);
-  border: 1px solid var(--border);
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary-dark);
-  font-size: 1rem;
-  cursor: pointer;
-}
+.logo { font-weight: 800; font-size: 1.6rem; letter-spacing: 2px; color: var(--white); display: flex; align-items: center; gap: 6px; }
+.logo span { color: var(--accent-yellow); }
+.nav-links { display: flex; gap: 25px; font-size: 0.85rem; font-weight: 600; list-style: none; }
+.nav-links li { cursor: pointer; transition: color 0.2s; }
+.nav-links li:hover { color: var(--accent-blue); }
+.header-right-actions { display: flex; align-items: center; gap: 15px; font-size: 0.85rem; font-weight: 600; }
+.badge-cart { background: var(--accent-blue); color: #000; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 800; }
 
 /* HERO BANNER */
-.hero-banner {
-  margin: 0 20px 20px;
-  background: linear-gradient(135deg, #111111 0%, #2c2c2c 100%);
-  border-radius: 20px;
-  padding: 20px;
+.hero-section {
+  background: radial-gradient(circle at center, #1e1e26 0%, var(--bg-dark) 100%);
+  padding: 50px 30px;
   color: white;
+  text-align: center;
   position: relative;
   overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
-.hero-text h3 { font-size: 0.75rem; font-weight: 700; color: var(--accent); letter-spacing: 1px; }
-.hero-text h1 { font-size: 1.35rem; font-weight: 800; margin-bottom: 5px; line-height: 1.2; }
-.hero-text p { font-size: 0.65rem; opacity: 0.8; margin-bottom: 15px; max-width: 160px; line-height: 1.4; }
-.btn-order {
-  background: var(--accent);
-  color: #111111;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.65rem;
-  font-weight: 800;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  cursor: pointer;
-}
-.hero-img-box {
-  width: 90px;
-  height: 90px;
-  background: rgba(246, 185, 0, 0.15);
-  border-radius: 50%;
+.hero-section h3 { font-size: 0.8rem; letter-spacing: 3px; color: var(--accent-blue); margin-bottom: 10px; font-weight: 700; }
+.hero-section h1 { font-size: 2.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.hero-section h1 span { color: var(--accent-yellow); }
+.hero-section p { font-size: 0.85rem; color: #9ca3af; max-width: 500px; margin: 0 auto 25px; }
+.hero-btn { background: var(--accent-yellow); color: #000; border: none; padding: 12px 30px; font-weight: 800; font-size: 0.85rem; border-radius: 4px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(246,185,0,0.4); }
+
+/* ATLETA PREVIEW ROW */
+.athletes-row {
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: var(--accent);
-  font-size: 3rem;
-  border: 2px solid rgba(246, 185, 0, 0.3);
-}
-.dots { display: flex; gap: 4px; justify-content: center; margin-bottom: 15px; }
-.dot { width: 6px; height: 6px; background: var(--border); border-radius: 50%; }
-.dot.active { width: 18px; background: var(--accent); border-radius: 4px; }
-
-/* CATEGORY SCROLLER */
-.categories-scroll {
-  display: flex;
   gap: 15px;
-  overflow-x: auto;
-  padding: 0 20px 20px;
-  scrollbar-width: none;
+  padding: 30px;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--border);
 }
-.categories-scroll::-webkit-scrollbar { display: none; }
-.cat-item { display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; min-width: 60px; }
-.cat-circle {
-  width: 55px;
-  height: 55px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  color: #b38600;
-  transition: all 0.2s;
-}
-.cat-item:hover .cat-circle, .cat-item.active .cat-circle { background: var(--accent); color: #111111; }
-.cat-name { font-size: 0.68rem; font-weight: 600; color: var(--text-main); }
-
-/* SECTION TITLE */
-.section-header {
-  padding: 0 20px 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.section-title { font-size: 1rem; font-weight: 800; color: var(--primary-dark); }
-.view-all { font-size: 0.75rem; font-weight: 700; color: #b38600; cursor: pointer; }
-
-/* PRODUCTS GRID */
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  padding: 0 20px 20px;
-}
-.product-card {
-  background: var(--white);
-  border-radius: 16px;
-  padding: 12px;
-  border: 1px solid var(--border);
-  position: relative;
-}
-.tag-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: var(--primary-dark);
-  color: white;
-  font-size: 0.5rem;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.product-img-box {
-  width: 100%;
+.athlete-card {
+  width: 180px;
   height: 100px;
-  background: #f5f5f5;
-  border-radius: 12px;
+  background: #e2e8f0;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
-  color: #b38600;
-  margin-bottom: 10px;
-}
-.product-name { font-size: 0.8rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 2px; }
-.product-desc { font-size: 0.62rem; color: var(--text-muted); margin-bottom: 8px; line-height: 1.2; }
-.product-rating { font-size: 0.65rem; color: #f59e0b; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 3px; }
-.product-rating span { color: var(--text-muted); font-weight: 400; }
-.product-footer { display: flex; justify-content: space-between; align-items: center; }
-.product-price { font-size: 0.85rem; font-weight: 800; color: var(--primary-dark); }
-.add-btn {
-  background: var(--accent);
-  color: #111111;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-/* PROMO BANNER BOTTOM */
-.promo-small {
-  margin: 0 20px 20px;
-  background: var(--accent-light);
-  border-radius: 16px;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #ffe066;
-}
-.promo-small h4 { font-size: 0.65rem; text-transform: uppercase; color: #b38600; font-weight: 800; letter-spacing: 1px; }
-.promo-small h2 { font-size: 1.1rem; font-weight: 800; color: var(--primary-dark); margin: 2px 0; }
-.promo-small p { font-size: 0.65rem; color: var(--text-muted); }
-
-/* BOTTOM NAVIGATION BAR */
-.bottom-nav {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: var(--white);
-  border-top: 1px solid var(--border);
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10;
-}
-.nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
+  font-size: 0.75rem;
+  font-weight: 700;
   color: var(--text-muted);
-  font-size: 0.6rem;
-  font-weight: 600;
+  border: 2px solid transparent;
+  transition: all 0.2s;
   cursor: pointer;
 }
-.nav-item i { font-size: 1.2rem; }
-.nav-item.active { color: #b38600; }
-.nav-item.center-order {
-  background: var(--accent);
-  color: #111111;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  justify-content: center;
-  margin-top: -22px;
-  box-shadow: 0 4px 10px rgba(246,185,0,0.4);
+.athlete-card:hover { border-color: var(--accent-blue); color: var(--bg-dark); }
+
+/* SECCIÓN PRODUCTOS */
+.products-section { padding: 40px 30px; background: #ffffff; }
+.section-title-box { text-align: center; margin-bottom: 35px; }
+.section-title-box h2 { font-size: 1.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--bg-dark); display: inline-block; position: relative; }
+.section-title-box h2::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 50px; height: 3px; background: var(--accent-yellow); }
+
+.products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+.product-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-align: center; position: transparent; transition: transform 0.2s, box-shadow 0.2s; }
+.product-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+.product-img-box { height: 140px; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--accent-blue); margin-bottom: 15px; background: #f8fafc; border-radius: 8px; }
+.product-title { font-size: 0.9rem; font-weight: 700; color: var(--text-main); margin-bottom: 6px; }
+.product-price { font-size: 1rem; font-weight: 800; color: var(--bg-dark); margin-bottom: 12px; }
+.cart-btn { background: var(--accent-yellow); color: #000; border: none; width: 100%; padding: 10px; font-weight: 800; font-size: 0.75rem; border-radius: 4px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; }
+.cart-btn:hover { background: #e5ab00; }
+
+/* DEAL OF THE DAY BANNER */
+.deal-banner {
+  margin: 20px 30px 40px;
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a24 100%);
+  border-radius: 12px;
+  padding: 40px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 5px solid var(--accent-blue);
 }
-.nav-item.center-order i { font-size: 1.3rem; }
+.deal-content h4 { color: var(--accent-yellow); font-size: 0.8rem; letter-spacing: 2px; font-weight: 800; margin-bottom: 6px; }
+.deal-content h2 { font-size: 1.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; }
+.deal-content p { font-size: 0.8rem; color: #9ca3af; margin-bottom: 20px; max-width: 350px; }
+.deal-btn { background: var(--accent-blue); color: #000; border: none; padding: 10px 24px; font-weight: 800; font-size: 0.75rem; border-radius: 4px; cursor: pointer; text-transform: uppercase; }
+
+/* TESTIMONIOS */
+.testimonials-section { padding: 30px; background: #f8fafc; border-top: 1px solid var(--border); }
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.testimonial-card { background: white; padding: 20px; border-radius: 8px; border: 1px solid var(--border); font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
+.testimonial-card strong { color: var(--text-main); display: block; margin-top: 10px; font-size: 0.85rem; }
+.stars { color: var(--accent-yellow); margin-bottom: 8px; }
+
+/* FOOTER */
+footer { background: var(--bg-dark); color: #9ca3af; padding: 30px; text-align: center; font-size: 0.75rem; border-top: 3px solid var(--accent-blue); }
+footer p { color: white; font-weight: 700; margin-bottom: 5px; }
 </style>
 </head>
 <body>
 
-<div class="phone-frame">
+<div class="main-container">
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div>Free Shipping on Orders Over $50 | 100% Banned Substance Tested</div>
+    <div class="top-bar-links">
+      <span>Supplements</span>
+      <span>Support</span>
+      <span>Account</span>
+    </div>
+  </div>
+
   <!-- HEADER -->
   <header>
-    <div class="header-left"><i class="ph ph-list"></i></div>
-    <div class="logo-container">
-      <div class="logo-title">Lionatural</div>
-      <div class="logo-sub">Store</div>
-    </div>
-    <div class="header-right">
-      <div class="icon-wrap"><i class="ph ph-bell"></i><span class="badge-count">3</span></div>
-      <div class="icon-wrap"><i class="ph ph-shopping-bag"></i><span class="badge-count">2</span></div>
+    <div class="logo">LIONATURAL <span>STORE</span></div>
+    <ul class="nav-links">
+      <li>Home</li>
+      <li>Proteins</li>
+      <li>Vitamins</li>
+      <li>Performance</li>
+      <li>Contact</li>
+    </ul>
+    <div class="header-right-actions">
+      <i class="ph ph-user" style="font-size: 1.2rem; cursor: pointer;"></i>
+      <div style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+        <i class="ph ph-shopping-cart" style="font-size: 1.2rem;"></i>
+        <span class="badge-cart">3</span>
+      </div>
     </div>
   </header>
 
-  <!-- SEARCH BAR -->
-  <div class="search-container">
-    <div class="search-box">
-      <i class="ph ph-magnifying-glass" style="font-size: 1rem;"></i>
-      <input type="text" placeholder="Search protein, vitamins, gear...">
-    </div>
-    <button class="filter-btn"><i class="ph ph-sliders-horizontal"></i></button>
+  <!-- HERO SECTION -->
+  <div class="hero-section">
+    <h3>WELCOME TO THE ELITE</h3>
+    <h1>PREMIUM <span>SUPPLEMENTS</span></h1>
+    <p>Fuel your transformation with clinically dosed, highest-grade nutritional formulas built for serious results.</p>
+    <button class="hero-btn">Shop Supplements</button>
   </div>
 
-  <!-- HERO BANNER -->
-  <div class="hero-banner">
-    <div class="hero-text">
-      <h3>SUPER SALE</h3>
-      <h1>Fuel Your Power</h1>
-      <p>Clean supplements designed for maximum performance.</p>
-      <button class="btn-order">SHOP NOW <i class="ph ph-arrow-right"></i></button>
-    </div>
-    <div class="hero-img-box">
-      <i class="ph-fill ph-barbell"></i>
-    </div>
-  </div>
-  <div class="dots">
-    <div class="dot active"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
+  <!-- ATHLETES PREVIEW ROW -->
+  <div class="athletes-row">
+    <div class="athlete-card"><i class="ph-fill ph-barbell" style="font-size: 1.2rem; margin-right: 6px;"></i> Strength</div>
+    <div class="athlete-card"><i class="ph-fill ph-lightning" style="font-size: 1.2rem; margin-right: 6px; color: var(--accent-yellow);"></i> Energy</div>
+    <div class="athlete-card"><i class="ph-fill ph-heartbeat" style="font-size: 1.2rem; margin-right: 6px; color: var(--accent-blue);"></i> Recovery</div>
   </div>
 
-  <!-- CATEGORIES -->
-  <div class="categories-scroll">
-    <div class="cat-item active">
-      <div class="cat-circle"><i class="ph-fill ph-barbell"></i></div>
-      <span class="cat-name">Protein</span>
+  <!-- PRODUCTS SECTION -->
+  <div class="products-section">
+    <div class="section-title-box">
+      <h2>Our Supplements</h2>
     </div>
-    <div class="cat-item">
-      <div class="cat-circle"><i class="ph-fill ph-pill"></i></div>
-      <span class="cat-name">Vitamins</span>
-    </div>
-    <div class="cat-item">
-      <div class="cat-circle"><i class="ph-fill ph-fire"></i></div>
-      <span class="cat-name">Energy</span>
-    </div>
-    <div class="cat-item">
-      <div class="cat-circle"><i class="ph-fill ph-leaf"></i></div>
-      <span class="cat-name">Organic</span>
-    </div>
-    <div class="cat-item">
-      <div class="cat-circle"><i class="ph-fill ph-cup"></i></div>
-      <span class="cat-name">Shakers</span>
-    </div>
-  </div>
-
-  <!-- SECTION HEADER -->
-  <div class="section-header">
-    <h2 class="section-title">Popular Products</h2>
-    <span class="view-all">View All <i class="ph ph-caret-right"></i></span>
-  </div>
-
-  <!-- PRODUCTS GRID -->
-  <div class="products-grid">
-    <!-- Producto 1 -->
-    <div class="product-card">
-      <span class="tag-badge">Bestseller</span>
-      <div class="product-img-box"><i class="ph-fill ph-jar"></i></div>
-      <div class="product-name">Whey Isolate</div>
-      <div class="product-desc">Advanced muscle recovery formula.</div>
-      <div class="product-rating"><i class="ph-fill ph-star"></i> 4.9 <span>(1.5K+)</span></div>
-      <div class="product-footer">
-        <span class="product-price">$49.99</span>
-        <button class="add-btn"><i class="ph ph-plus"></i></button>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-img-box"><i class="ph-fill ph-jar"></i></div>
+        <div class="product-title">Whey Isolate Protein</div>
+        <div class="product-price">$54.99</div>
+        <button class="cart-btn">Add to Cart</button>
       </div>
-    </div>
-    <!-- Producto 2 -->
-    <div class="product-card">
-      <span class="tag-badge" style="background: var(--accent); color: #111;">PROMO</span>
-      <div class="product-img-box"><i class="ph-fill ph-lightning"></i></div>
-      <div class="product-name">Clean Pre-Workout</div>
-      <div class="product-desc">Explosive energy & focus.</div>
-      <div class="product-rating"><i class="ph-fill ph-star"></i> 4.8 <span>(920+)</span></div>
-      <div class="product-footer">
-        <span class="product-price">$34.99</span>
-        <button class="add-btn"><i class="ph ph-plus"></i></button>
+      <div class="product-card">
+        <div class="product-img-box"><i class="ph-fill ph-lightning"></i></div>
+        <div class="product-title">Extreme Pre-Workout</div>
+        <div class="product-price">$39.99</div>
+        <button class="cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <div class="product-img-box"><i class="ph-fill ph-capsule"></i></div>
+        <div class="product-title">Pure Creatine Monohydrate</div>
+        <div class="product-price">$29.99</div>
+        <button class="cart-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <div class="product-img-box"><i class="ph-fill ph-drop"></i></div>
+        <div class="product-title">Advanced Multivitamin</div>
+        <div class="product-price">$24.99</div>
+        <button class="cart-btn">Add to Cart</button>
       </div>
     </div>
   </div>
 
-  <!-- PROMO BANNER BOTTOM -->
-  <div class="promo-small">
-    <div>
-      <h4>WEEKEND DEAL</h4>
-      <h2>25% OFF</h2>
-      <p>On all organic protein stacks</p>
+  <!-- DEAL OF THE DAY -->
+  <div class="deal-banner">
+    <div class="deal-content">
+      <h4>HURRY UP!</h4>
+      <h2>DEAL OF THE DAY</h2>
+      <p>Get huge discounts on all elite performance stacks today only.</p>
+      <button class="deal-btn">Shop Now</button>
     </div>
-    <i class="ph-fill ph-percent" style="font-size: 2.2rem; color: #b38600;"></i>
+    <i class="ph-fill ph-fire" style="font-size: 4rem; color: var(--accent-yellow);"></i>
   </div>
 
-  <!-- BOTTOM NAVIGATION -->
-  <div class="bottom-nav">
-    <div class="nav-item active">
-      <i class="ph-fill ph-house"></i>
-      <span>Home</span>
+  <!-- TESTIMONIALS -->
+  <div class="testimonials-section">
+    <div class="section-title-box" style="margin-bottom: 25px;">
+      <h2>Our Happy Clients</h2>
     </div>
-    <div class="nav-item">
-      <i class="ph ph-book-open"></i>
-      <span>Menu</span>
-    </div>
-    <div class="nav-item center-order">
-      <i class="ph-fill ph-shopping-bag"></i>
-    </div>
-    <div class="nav-item">
-      <i class="ph ph-gift"></i>
-      <span>Rewards</span>
-    </div>
-    <div class="nav-item">
-      <i class="ph ph-user"></i>
-      <span>Profile</span>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        "The best protein I've ever used. Clean gains, zero bloating, and amazing taste. Lionatural is top tier!"
+        <strong>— Daniel S.</strong>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        "Energy levels during workouts skyrocketed with their pre-workout. Highly recommended for athletes."
+        <strong>— Jessica P.</strong>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        "Fast shipping and certified quality. Found my permanent supplement brand."
+        <strong>— Marcus T.</strong>
+      </div>
     </div>
   </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>LIONATURAL STORE — EMPOWERING YOUR FITNESS JOURNEY</p>
+    <div>© 2026 All rights reserved. Secure SSL Checkout • FDA Certified Facility</div>
+  </footer>
 </div>
 
 </body>
-    </html>
-        
+</html>
