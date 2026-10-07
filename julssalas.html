@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Personal Fitness Trainer</title>
+<title>Juls Salas | Entrenador Personal</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
 <style>
 :root {
   --bg-main: #0a0a0a;
   --bg-sec: #111111;
-  --accent-red: #ff2a2a;
+  --accent: #f6b900;
+  --accent-hover: #dba400;
   --text-light: #ffffff;
   --text-muted: #888888;
   --border-color: #333333;
@@ -38,7 +39,7 @@ header {
   z-index: 10;
 }
 .logo { font-family: 'Oswald', sans-serif; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-.logo-icon { background: var(--accent-red); width: 15px; height: 15px; display: inline-block; }
+.logo-icon { background: var(--accent); width: 15px; height: 15px; display: inline-block; }
 .menu-icon { font-size: 1.5rem; cursor: pointer; color: var(--text-light); }
 
 /* HERO SECTION */
@@ -48,7 +49,7 @@ header {
   display: flex;
   align-items: center;
   padding: 0 10%;
-  background: linear-gradient(to right, rgba(10,10,10,1) 0%, rgba(10,10,10,0.4) 100%), url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop') center/cover;
+  background: linear-gradient(to right, rgba(10,10,10,1) 0%, rgba(10,10,10,0.6) 100%), url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop') center/cover;
 }
 .hero-content h1 {
   font-size: 5rem;
@@ -62,7 +63,7 @@ header {
   align-items: center;
   gap: 15px;
 }
-.hero-content .red-line { width: 60px; height: 5px; background: var(--accent-red); }
+.hero-content .accent-line { width: 60px; height: 5px; background: var(--accent); }
 .hero-desc {
   margin-top: 20px;
   font-size: 0.8rem;
@@ -71,7 +72,7 @@ header {
 }
 
 /* SECTION TITLES */
-.section-subtitle { text-align: center; font-size: 0.7rem; color: var(--accent-red); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-top: 60px; }
+.section-subtitle { text-align: center; font-size: 0.7rem; color: var(--accent); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-top: 60px; }
 .section-title { text-align: center; font-size: 2rem; font-weight: 700; margin-bottom: 40px; }
 
 /* ABOUT SECTION */
@@ -116,13 +117,13 @@ header {
   align-items: center;
   margin-bottom: 20px;
 }
-.about-name-row h3 { color: var(--accent-red); font-size: 1.2rem; letter-spacing: 1px; }
+.about-name-row h3 { color: var(--accent); font-size: 1.2rem; letter-spacing: 1px; }
 .social-icons { display: flex; gap: 10px; font-size: 1.2rem; color: var(--text-muted); }
 .social-icons i { cursor: pointer; transition: color 0.2s; }
-.social-icons i:hover { color: var(--accent-red); }
+.social-icons i:hover { color: var(--accent); }
 
 .about-text { font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 20px; }
-.read-more { color: var(--accent-red); font-size: 0.75rem; font-weight: 700; text-decoration: none; text-transform: uppercase; }
+.read-more { color: var(--accent); font-size: 0.75rem; font-weight: 700; text-decoration: none; text-transform: uppercase; }
 
 .video-grid { display: flex; gap: 10px; margin-top: 30px; }
 .vid-thumb { width: 80px; height: 60px; background: #222; border-radius: 4px; position: relative; display: flex; justify-content: center; align-items: center; overflow: hidden; }
@@ -150,19 +151,20 @@ header {
   font-size: 0.85rem;
   width: 220px;
   outline: none;
+  color: #000;
 }
-.btn-red {
-  background: var(--accent-red);
-  color: white;
+.btn-accent {
+  background: var(--accent);
+  color: #000;
   border: none;
   padding: 12px 40px;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
   text-transform: uppercase;
   transition: background 0.3s;
 }
-.btn-red:hover { background: #d41a1a; }
+.btn-accent:hover { background: var(--accent-hover); }
 
 /* WHAT WE DO SECTION */
 .services-section {
@@ -186,18 +188,18 @@ header {
 .srv-circle {
   width: 80px;
   height: 80px;
-  border: 2px solid var(--accent-red);
+  border: 2px solid var(--accent);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  color: var(--accent-red);
+  color: var(--accent);
   position: relative;
 }
 .srv-circle::before {
   content: ''; position: absolute; top: -5px; left: -5px; right: -5px; bottom: -5px;
-  border: 1px solid rgba(255, 42, 42, 0.3); border-radius: 50%;
+  border: 1px solid rgba(246, 185, 0, 0.3); border-radius: 50%;
 }
 .srv-name { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
@@ -214,13 +216,13 @@ header {
 .metric-center-icon {
   width: 100px;
   height: 100px;
-  border: 4px solid var(--accent-red);
+  border: 4px solid var(--accent);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  color: var(--accent-red);
+  color: var(--accent);
 }
 
 /* CONTACT SECTION */
@@ -253,7 +255,7 @@ header {
   outline: none;
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
-.contact-form input:focus, .contact-form textarea:focus { border-bottom-color: var(--accent-red); }
+.contact-form input:focus, .contact-form textarea:focus { border-bottom-color: var(--accent); }
 
 /* FOOTER */
 footer {
@@ -285,9 +287,9 @@ footer {
 <!-- HEADER -->
 <header>
   <div class="logo">
-    <span class="logo-icon"></span> THE FITNESS
+    <span class="logo-icon"></span> JULS SALAS
   </div>
-  <i class="ph ph-list menu-icon"></i>
+  <a href="index.html" style="color: white; text-decoration: none; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;"><i class="ph ph-arrow-left"></i> Volver a la Tienda</a>
 </header>
 
 <!-- HERO SECTION -->
@@ -295,52 +297,53 @@ footer {
   <div class="hero-content">
     <h1>PUSH</h1>
     <div class="line-2">
-      <div class="red-line"></div>
+      <div class="accent-line"></div>
       <h1>YOURSELF</h1>
     </div>
-    <p class="hero-desc">Winner of the international championship "Fit Girl" in the Miss Bikini nomination.</p>
+    <p class="hero-desc">Lleva tu cuerpo al siguiente nivel con entrenamiento personalizado y nutrición estructurada.</p>
   </div>
 </section>
 
 <!-- ABOUT SECTION -->
-<div class="section-subtitle">Welcome to my gym</div>
-<h2 class="section-title">ABOUT ME</h2>
+<div class="section-subtitle">Conoce a tu Entrenador</div>
+<h2 class="section-title">SOBRE MÍ</h2>
 
 <section class="about-section">
   <div class="about-img">
-    <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop" alt="Trainer Profile">
+    <!-- Aquí puedes colocar la ruta de tu foto de entrenador, ej: src="entrenador.jpg" -->
+    <img src="entrenador.jpg" alt="Perfil Entrenador" onerror="this.src='https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop'">
   </div>
   <div class="about-info">
     <div class="stats-row">
       <div class="stat-item">
-        <div class="stat-val">27</div>
-        <div class="stat-lbl">Age</div>
+        <div class="stat-val">7+</div>
+        <div class="stat-lbl">Años Exp.</div>
       </div>
       <div class="stat-item">
-        <div class="stat-val">5' 6"</div>
-        <div class="stat-lbl">Height</div>
+        <div class="stat-val">300+</div>
+        <div class="stat-lbl">Clientes</div>
       </div>
       <div class="stat-item">
-        <div class="stat-val">103.6</div>
-        <div class="stat-lbl">Weight</div>
+        <div class="stat-val">100%</div>
+        <div class="stat-lbl">Compromiso</div>
       </div>
     </div>
     
     <div class="about-name-row">
-      <h3>ANNA SMITH</h3>
+      <h3>JULS SALAS</h3>
       <div class="social-icons">
         <i class="ph-fill ph-facebook-logo"></i>
         <i class="ph-fill ph-instagram-logo"></i>
-        <i class="ph-fill ph-twitter-logo"></i>
+        <i class="ph-fill ph-tiktok-logo"></i>
       </div>
     </div>
     
     <p class="about-text">
-      I'm a personal trainer, group fitness instructor, master-trainer, writer, blogger, and fitness lover. I love doing cross-training, lifting heavy weights, and trail running. Looking at me, you'll fully understand my attitude to fitness and well-being.
+      Soy entrenador personal, asesor de nutrición deportiva y fundador de Lionatural. Mi enfoque se basa en el trabajo duro, la constancia y la ciencia detrás del desarrollo muscular y la pérdida de grasa. 
       <br><br>
-      My body will clearly demonstrate the rules that improve my health, performance, and body composition while keeping my inner balance perfect.
+      Con mi asesoría, no solo cambiarás tu físico, sino que aprenderás las bases de un estilo de vida sostenible, fuerte y saludable.
     </p>
-    <a href="#" class="read-more">Read More</a>
+    <a href="#" class="read-more">Conocer más</a>
     
     <div class="video-grid">
       <div class="vid-thumb">
@@ -351,98 +354,93 @@ footer {
         <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=300&auto=format&fit=crop" alt="vid2">
         <i class="ph-fill ph-play-circle"></i>
       </div>
-      <div class="vid-thumb">
-        <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=300&auto=format&fit=crop" alt="vid3">
-        <i class="ph-fill ph-play-circle"></i>
-      </div>
     </div>
   </div>
 </section>
 
 <!-- QUICK FORM SECTION -->
 <section class="quick-form-section">
-  <div class="section-subtitle" style="margin-top: 0;">Ready to start?</div>
-  <p style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 5px;">Leave your request for personal programme</p>
+  <div class="section-subtitle" style="margin-top: 0;">¿Listo para empezar?</div>
+  <p style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 5px;">Deja tus datos para recibir asesoría personalizada</p>
   
   <form class="quick-form">
-    <input type="text" placeholder="NAME">
-    <input type="text" placeholder="PHONE">
-    <button type="button" class="btn-red">SEND</button>
+    <input type="text" placeholder="NOMBRE">
+    <input type="text" placeholder="TELÉFONO / WHATSAPP">
+    <button type="button" class="btn-accent">ENVIAR</button>
   </form>
 </section>
 
 <!-- WHAT WILL WE DO SECTION -->
 <section class="services-section">
-  <h2 class="section-title" style="font-size: 1.5rem;">WHAT WILL WE DO?</h2>
-  <div class="section-subtitle" style="margin-top: -30px; margin-bottom: 30px;">+ TIME + CALORIES</div>
+  <h2 class="section-title" style="font-size: 1.5rem;">METODOLOGÍA</h2>
   
   <div class="service-icons">
     <div class="srv-item">
       <div class="srv-circle"><i class="ph ph-barbell"></i></div>
-      <div class="srv-name">Workout</div>
+      <div class="srv-name">Fuerza</div>
     </div>
     <div class="srv-item">
       <div class="srv-circle"><i class="ph ph-sneaker"></i></div>
-      <div class="srv-name">Running</div>
+      <div class="srv-name">Cardio</div>
     </div>
     <div class="srv-item">
-      <div class="srv-circle"><i class="ph ph-swimmer"></i></div>
-      <div class="srv-name">Swimming</div>
+      <div class="srv-circle"><i class="ph ph-apple-logo"></i></div>
+      <div class="srv-name">Nutrición</div>
     </div>
     <div class="srv-item">
-      <div class="srv-circle"><i class="ph ph-person-simple-lotus"></i></div>
-      <div class="srv-name">Yoga</div>
+      <div class="srv-circle"><i class="ph ph-brain"></i></div>
+      <div class="srv-name">Mindset</div>
     </div>
   </div>
 
   <div class="metrics-row">
     <div class="metric">
-      <h2>- 477</h2>
-      <p>Calories</p>
+      <h2>- 500</h2>
+      <p>Calorías Prom.</p>
     </div>
     <div class="metric-center-icon">
-      <i class="ph-fill ph-drop"></i>
+      <i class="ph-fill ph-fire"></i>
     </div>
     <div class="metric">
       <h2>60</h2>
-      <p>Minutes</p>
+      <p>Minutos</p>
     </div>
   </div>
 </section>
 
 <!-- CONTACT SECTION -->
 <section class="contact-section">
-  <div class="section-subtitle" style="margin-top: 0;">Contact me</div>
-  <p style="text-align: center; font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 40px;">For more information</p>
+  <div class="section-subtitle" style="margin-top: 0;">Contáctame</div>
+  <p style="text-align: center; font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 40px;">PARA MÁS INFORMACIÓN</p>
 
   <div class="contact-grid">
     <div class="contact-info">
       <div class="contact-item">
-        <h4>PHONE</h4>
-        <p>8 (812) - 974 - 57 - 05</p>
-        <i class="ph ph-phone"></i>
+        <h4>WHATSAPP</h4>
+        <p>+57 300 123 4567</p>
+        <i class="ph ph-whatsapp-logo"></i>
       </div>
       <div class="contact-item">
         <h4>EMAIL</h4>
-        <p>FINEFITNESS@GMAIL.COM</p>
+        <p>asesorias@lionatural.com</p>
         <i class="ph ph-envelope-simple"></i>
       </div>
       <div class="contact-item">
-        <h4>ADDRESS</h4>
-        <p>SAINT-PETERSBURG, ISAAC SQUARE 4-9</p>
+        <h4>UBICACIÓN</h4>
+        <p>Entrenamiento Online & Presencial</p>
         <i class="ph ph-map-pin"></i>
       </div>
     </div>
     
     <form class="contact-form">
       <div class="form-row">
-        <input type="text" placeholder="NAME">
-        <input type="text" placeholder="PHONE">
+        <input type="text" placeholder="NOMBRE">
+        <input type="text" placeholder="WHATSAPP">
       </div>
-      <input type="email" placeholder="E-MAIL">
-      <textarea placeholder="MESSAGE" rows="4"></textarea>
+      <input type="email" placeholder="CORREO ELECTRÓNICO">
+      <textarea placeholder="CUÉNTAME TUS OBJETIVOS (BAJAR DE PESO, GANAR MASA...)" rows="4"></textarea>
       <div style="text-align: right;">
-        <button type="button" class="btn-red" style="padding: 10px 30px; font-size: 0.7rem;">SEND MESSAGE</button>
+        <button type="button" class="btn-accent" style="padding: 10px 30px; font-size: 0.7rem;">ENVIAR MENSAJE</button>
       </div>
     </form>
   </div>
@@ -451,19 +449,15 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="footer-links">
-    <span>LINKS</span>
-    <a href="#">ABOUT ME</a>
-    <a href="#">VIDEOS</a>
+    <a href="index.html">VOLVER A LIONATURAL STORE</a>
   </div>
   <div class="footer-social">
-    <span style="margin-right: 10px;">FOLLOW ME</span>
-    <i class="ph ph-facebook-logo"></i>
+    <span style="margin-right: 10px;">SÍGUEME</span>
     <i class="ph ph-instagram-logo"></i>
-    <i class="ph ph-twitter-logo"></i>
-    <i class="ph ph-youtube-logo"></i>
+    <i class="ph ph-tiktok-logo"></i>
   </div>
 </footer>
 
 </body>
-          </html>
-          
+  </html>
+  
