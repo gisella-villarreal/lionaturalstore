@@ -10,7 +10,7 @@
 :root {
   --bg-main: #0a0a0a;
   --bg-sec: #111111;
-  --accent: #f6b900;
+  --accent: #f6b900; /* Color amarillo dorado */
   --accent-hover: #dba400;
   --text-light: #ffffff;
   --text-muted: #888888;
@@ -40,7 +40,6 @@ header {
 }
 .logo { font-family: 'Oswald', sans-serif; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
 .logo-icon { background: var(--accent); width: 15px; height: 15px; display: inline-block; }
-.menu-icon { font-size: 1.5rem; cursor: pointer; color: var(--text-light); }
 
 /* HERO SECTION */
 .hero {
@@ -96,10 +95,7 @@ header {
   border-radius: 10px;
   object-fit: cover;
 }
-.about-info {
-  flex: 1;
-  min-width: 300px;
-}
+.about-info { flex: 1; min-width: 300px; }
 .stats-row {
   display: flex;
   gap: 40px;
@@ -111,180 +107,40 @@ header {
 .stat-val { font-size: 1.5rem; font-weight: 700; font-family: 'Oswald', sans-serif; }
 .stat-lbl { font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
 
-.about-name-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
+.about-name-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
 .about-name-row h3 { color: var(--accent); font-size: 1.2rem; letter-spacing: 1px; }
 .social-icons { display: flex; gap: 10px; font-size: 1.2rem; color: var(--text-muted); }
 .social-icons i { cursor: pointer; transition: color 0.2s; }
 .social-icons i:hover { color: var(--accent); }
 
 .about-text { font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 20px; }
-.read-more { color: var(--accent); font-size: 0.75rem; font-weight: 700; text-decoration: none; text-transform: uppercase; }
 
-.video-grid { display: flex; gap: 10px; margin-top: 30px; }
-.vid-thumb { width: 80px; height: 60px; background: #222; border-radius: 4px; position: relative; display: flex; justify-content: center; align-items: center; overflow: hidden; }
-.vid-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
-.vid-thumb i { position: absolute; color: white; font-size: 1.2rem; }
-
-/* QUICK FORM */
-.quick-form-section {
-  background: var(--bg-sec);
-  padding: 40px 20px;
-  text-align: center;
-}
-.quick-form {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  max-width: 800px;
-  margin: 20px auto 0;
-}
-.quick-form input {
-  background: var(--text-light);
-  border: none;
-  padding: 12px 20px;
-  font-size: 0.85rem;
-  width: 220px;
-  outline: none;
-  color: #000;
-}
-.btn-accent {
-  background: var(--accent);
-  color: #000;
-  border: none;
-  padding: 12px 40px;
-  font-size: 0.85rem;
-  font-weight: 800;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: background 0.3s;
-}
-.btn-accent:hover { background: var(--accent-hover); }
-
-/* WHAT WE DO SECTION */
-.services-section {
-  padding: 60px 20px;
-  text-align: center;
-  background: radial-gradient(circle at center, #1a1a1a 0%, var(--bg-main) 100%);
-}
-.service-icons {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-.srv-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-.srv-circle {
-  width: 80px;
-  height: 80px;
-  border: 2px solid var(--accent);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: var(--accent);
-  position: relative;
-}
-.srv-circle::before {
-  content: ''; position: absolute; top: -5px; left: -5px; right: -5px; bottom: -5px;
-  border: 1px solid rgba(246, 185, 0, 0.3); border-radius: 50%;
-}
+/* SERVICES */
+.services-section { padding: 60px 20px; text-align: center; background: radial-gradient(circle at center, #1a1a1a 0%, var(--bg-main) 100%); }
+.service-icons { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; }
+.srv-item { display: flex; flex-direction: column; align-items: center; gap: 15px; }
+.srv-circle { width: 80px; height: 80px; border: 2px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--accent); position: relative; }
 .srv-name { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
-.metrics-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  margin-top: 60px;
-}
-.metric { text-align: center; }
-.metric h2 { font-size: 3.5rem; color: var(--text-light); line-height: 1; }
-.metric p { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-.metric-center-icon {
-  width: 100px;
-  height: 100px;
-  border: 4px solid var(--accent);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  color: var(--accent);
-}
-
-/* CONTACT SECTION */
-.contact-section {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-}
-.contact-info { display: flex; flex-direction: column; gap: 30px; }
-.contact-item { text-align: right; }
-.contact-item h4 { font-size: 0.6rem; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 5px; }
-.contact-item p { font-size: 0.9rem; font-weight: 600; }
-.contact-item i { font-size: 1.2rem; color: var(--text-muted); margin-top: 5px; }
-
-.contact-form { display: flex; flex-direction: column; gap: 20px; }
-.form-row { display: flex; gap: 20px; }
-.contact-form input, .contact-form textarea {
-  width: 100%;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--border-color);
-  color: var(--text-light);
-  padding: 10px 0;
-  font-size: 0.8rem;
-  outline: none;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
-.contact-form input:focus, .contact-form textarea:focus { border-bottom-color: var(--accent); }
+/* QUICK FORM */
+.quick-form-section { background: var(--bg-sec); padding: 40px 20px; text-align: center; }
+.quick-form { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; max-width: 800px; margin: 20px auto 0; }
+.quick-form input { background: var(--text-light); border: none; padding: 12px 20px; font-size: 0.85rem; width: 220px; outline: none; color: #000; }
+.btn-accent { background: var(--accent); color: #000; border: none; padding: 12px 40px; font-size: 0.85rem; font-weight: 800; cursor: pointer; text-transform: uppercase; }
+.btn-accent:hover { background: var(--accent-hover); }
 
 /* FOOTER */
-footer {
-  border-top: 1px solid var(--border-color);
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.7rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-}
-.footer-links { display: flex; gap: 20px; }
-.footer-links a { color: var(--text-muted); text-decoration: none; }
-.footer-social { display: flex; gap: 15px; font-size: 1rem; }
+footer { border-top: 1px solid var(--border-color); padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; }
+.footer-links a { color: var(--text-muted); text-decoration: none; font-weight: 700; }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .hero-content h1 { font-size: 3.5rem; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .contact-item { text-align: center; }
-  .form-row { flex-direction: column; gap: 20px; }
   footer { flex-direction: column; gap: 15px; text-align: center; }
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="logo">
     <span class="logo-icon"></span> JULS SALAS
@@ -292,7 +148,6 @@ footer {
   <a href="index.html" style="color: white; text-decoration: none; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;"><i class="ph ph-arrow-left"></i> Volver a la Tienda</a>
 </header>
 
-<!-- HERO SECTION -->
 <section class="hero">
   <div class="hero-content">
     <h1>PUSH</h1>
@@ -304,158 +159,45 @@ footer {
   </div>
 </section>
 
-<!-- ABOUT SECTION -->
 <div class="section-subtitle">Conoce a tu Entrenador</div>
 <h2 class="section-title">SOBRE MÍ</h2>
-
 <section class="about-section">
   <div class="about-img">
-    <!-- Aquí puedes colocar la ruta de tu foto de entrenador, ej: src="entrenador.jpg" -->
     <img src="entrenador.jpg" alt="Perfil Entrenador" onerror="this.src='https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop'">
   </div>
   <div class="about-info">
     <div class="stats-row">
-      <div class="stat-item">
-        <div class="stat-val">7+</div>
-        <div class="stat-lbl">Años Exp.</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-val">300+</div>
-        <div class="stat-lbl">Clientes</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-val">100%</div>
-        <div class="stat-lbl">Compromiso</div>
-      </div>
+      <div class="stat-item"><div class="stat-val">7+</div><div class="stat-lbl">Años Exp.</div></div>
+      <div class="stat-item"><div class="stat-val">300+</div><div class="stat-lbl">Clientes</div></div>
     </div>
-    
     <div class="about-name-row">
       <h3>JULS SALAS</h3>
-      <div class="social-icons">
-        <i class="ph-fill ph-facebook-logo"></i>
-        <i class="ph-fill ph-instagram-logo"></i>
-        <i class="ph-fill ph-tiktok-logo"></i>
-      </div>
+      <div class="social-icons"><i class="ph-fill ph-instagram-logo"></i><i class="ph-fill ph-tiktok-logo"></i></div>
     </div>
-    
-    <p class="about-text">
-      Soy entrenador personal, asesor de nutrición deportiva y fundador de Lionatural. Mi enfoque se basa en el trabajo duro, la constancia y la ciencia detrás del desarrollo muscular y la pérdida de grasa. 
-      <br><br>
-      Con mi asesoría, no solo cambiarás tu físico, sino que aprenderás las bases de un estilo de vida sostenible, fuerte y saludable.
-    </p>
-    <a href="#" class="read-more">Conocer más</a>
-    
-    <div class="video-grid">
-      <div class="vid-thumb">
-        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=300&auto=format&fit=crop" alt="vid1">
-        <i class="ph-fill ph-play-circle"></i>
-      </div>
-      <div class="vid-thumb">
-        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=300&auto=format&fit=crop" alt="vid2">
-        <i class="ph-fill ph-play-circle"></i>
-      </div>
-    </div>
+    <p class="about-text">Soy entrenador personal, asesor de nutrición deportiva y fundador de Lionatural. Mi enfoque se basa en el trabajo duro, la constancia y la ciencia detrás del desarrollo muscular y la pérdida de grasa.</p>
   </div>
 </section>
 
-<!-- QUICK FORM SECTION -->
+<section class="services-section">
+  <h2 class="section-title" style="font-size: 1.5rem;">METODOLOGÍA</h2>
+  <div class="service-icons">
+    <div class="srv-item"><div class="srv-circle"><i class="ph ph-barbell"></i></div><div class="srv-name">Fuerza</div></div>
+    <div class="srv-item"><div class="srv-circle"><i class="ph ph-apple-logo"></i></div><div class="srv-name">Nutrición</div></div>
+  </div>
+</section>
+
 <section class="quick-form-section">
   <div class="section-subtitle" style="margin-top: 0;">¿Listo para empezar?</div>
-  <p style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 5px;">Deja tus datos para recibir asesoría personalizada</p>
-  
   <form class="quick-form">
     <input type="text" placeholder="NOMBRE">
-    <input type="text" placeholder="TELÉFONO / WHATSAPP">
+    <input type="text" placeholder="WHATSAPP">
     <button type="button" class="btn-accent">ENVIAR</button>
   </form>
 </section>
 
-<!-- WHAT WILL WE DO SECTION -->
-<section class="services-section">
-  <h2 class="section-title" style="font-size: 1.5rem;">METODOLOGÍA</h2>
-  
-  <div class="service-icons">
-    <div class="srv-item">
-      <div class="srv-circle"><i class="ph ph-barbell"></i></div>
-      <div class="srv-name">Fuerza</div>
-    </div>
-    <div class="srv-item">
-      <div class="srv-circle"><i class="ph ph-sneaker"></i></div>
-      <div class="srv-name">Cardio</div>
-    </div>
-    <div class="srv-item">
-      <div class="srv-circle"><i class="ph ph-apple-logo"></i></div>
-      <div class="srv-name">Nutrición</div>
-    </div>
-    <div class="srv-item">
-      <div class="srv-circle"><i class="ph ph-brain"></i></div>
-      <div class="srv-name">Mindset</div>
-    </div>
-  </div>
-
-  <div class="metrics-row">
-    <div class="metric">
-      <h2>- 500</h2>
-      <p>Calorías Prom.</p>
-    </div>
-    <div class="metric-center-icon">
-      <i class="ph-fill ph-fire"></i>
-    </div>
-    <div class="metric">
-      <h2>60</h2>
-      <p>Minutos</p>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT SECTION -->
-<section class="contact-section">
-  <div class="section-subtitle" style="margin-top: 0;">Contáctame</div>
-  <p style="text-align: center; font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 40px;">PARA MÁS INFORMACIÓN</p>
-
-  <div class="contact-grid">
-    <div class="contact-info">
-      <div class="contact-item">
-        <h4>WHATSAPP</h4>
-        <p>+57 300 123 4567</p>
-        <i class="ph ph-whatsapp-logo"></i>
-      </div>
-      <div class="contact-item">
-        <h4>EMAIL</h4>
-        <p>asesorias@lionatural.com</p>
-        <i class="ph ph-envelope-simple"></i>
-      </div>
-      <div class="contact-item">
-        <h4>UBICACIÓN</h4>
-        <p>Entrenamiento Online & Presencial</p>
-        <i class="ph ph-map-pin"></i>
-      </div>
-    </div>
-    
-    <form class="contact-form">
-      <div class="form-row">
-        <input type="text" placeholder="NOMBRE">
-        <input type="text" placeholder="WHATSAPP">
-      </div>
-      <input type="email" placeholder="CORREO ELECTRÓNICO">
-      <textarea placeholder="CUÉNTAME TUS OBJETIVOS (BAJAR DE PESO, GANAR MASA...)" rows="4"></textarea>
-      <div style="text-align: right;">
-        <button type="button" class="btn-accent" style="padding: 10px 30px; font-size: 0.7rem;">ENVIAR MENSAJE</button>
-      </div>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <div class="footer-links">
-    <a href="index.html">VOLVER A LIONATURAL STORE</a>
-  </div>
-  <div class="footer-social">
-    <span style="margin-right: 10px;">SÍGUEME</span>
-    <i class="ph ph-instagram-logo"></i>
-    <i class="ph ph-tiktok-logo"></i>
-  </div>
+  <div class="footer-links"><a href="index.html">VOLVER A LIONATURAL STORE</a></div>
+  <div class="footer-social"><span>SÍGUEME</span><i class="ph ph-instagram-logo"></i></div>
 </footer>
 
 </body>
