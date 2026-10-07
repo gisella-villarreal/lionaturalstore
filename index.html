@@ -182,13 +182,13 @@ header {
 .add-cart-btn { background: var(--accent-yellow); color: #000; border: none; width: 100%; padding: 7px; font-weight: 800; font-size: 0.65rem; border-radius: 4px; cursor: pointer; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 4px; transition: background 0.2s; }
 .add-cart-btn:hover { background: var(--accent-yellow-hover); }
 
-/* ====== NUEVO BANNER ENTRENADOR (UNA SOLA TOMA VISUAL) ====== */
+/* ====== NUEVO BANNER ENTRENADOR ====== */
 .trainer-banner {
   display: flex;
   background: #000000;
   align-items: stretch;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin: 0;
 }
 .trainer-image-col {
   flex: 1;
@@ -196,18 +196,10 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000000; /* Fondo unificado */
+  background: #1a1a1a;
   min-height: 350px;
   position: relative;
-}
-/* Efecto de difuminado inferior para que la imagen se fusione con el negro */
-.trainer-image-col::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 80px;
-  background: linear-gradient(to bottom, transparent, #000000);
-  z-index: 1;
+  overflow: hidden;
 }
 .trainer-image-col img {
   width: 100%;
@@ -215,7 +207,6 @@ header {
   object-fit: cover;
   position: absolute;
   top: 0; left: 0;
-  z-index: 0;
 }
 .trainer-text-col {
   flex: 1;
@@ -227,8 +218,6 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #000000; /* Fondo unificado */
-  z-index: 2;
 }
 .trainer-text-col h2 {
   font-size: 1.4rem;
@@ -320,13 +309,7 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
   header { padding: 12px 15px; }
   .brand-logo { height: 65px; } 
   .newsletter-banner { flex-direction: column; text-align: center; }
-  
-  /* Ajustes específicos de "Una sola toma visual" para celular */
-  .trainer-image-col { min-height: 180px; } /* Altura super reducida en celular */
-  .trainer-text-col { padding: 0 15px 40px; } /* Menos espacio arriba para que el texto encaje con la imagen */
-  .trainer-text-col h2 { font-size: 1.25rem; margin-bottom: 8px; }
-  .trainer-text-col h3 { font-size: 1rem; margin-bottom: 12px; }
-  .trainer-text-col p { font-size: 0.8rem; margin-bottom: 18px; }
+  .trainer-text-col { padding: 40px 20px; }
 }
 </style>
 </head>
@@ -486,16 +469,20 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
     </div>
   </div>
 
-  <!-- ====== BANNER ENTRENADOR (UNA SOLA TOMA VISUAL) ====== -->
-  <div class="trainer-banner">
+  <!-- ====== NUEVO BANNER ENTRENADOR ====== -->
+  <div class="trainer-banner" style="margin-top: 40px;">
     <div class="trainer-image-col">
+      <!-- Solo tienes que subir la foto de tu entrenador a GitHub con el nombre "entrenador.jpg" para que aparezca aquí -->
       <img src="entrenador.jpg" alt="Entrenador Personal" onerror="this.style.display='none'">
-      <i class="ph-fill ph-user" style="font-size: 5rem; color: #333; position: absolute; z-index: -1;"></i>
+      <!-- Icono de relleno por si la imagen aún no se ha subido -->
+      <i class="ph-fill ph-user" style="font-size: 6rem; color: #333; position: absolute; z-index: -1;"></i>
     </div>
     <div class="trainer-text-col">
       <h2>¿QUIERES RESULTADOS <br><span>REALES?</span></h2>
       <h3>CONOCE A NUESTRO <br><span>FUNDADOR Y ENTRENADOR <br>PERSONAL</span></h3>
       <p>Manda el código 'ENTRENADOR' por WhatsApp y recibe asesoría exclusiva.</p>
+      
+      <!-- Reemplaza el '#' con tu enlace de WhatsApp (ej: https://wa.me/573001234567?text=ENTRENADOR) -->
       <a href="#" class="whatsapp-btn">
         <span>MANDA CÓDIGO AQUÍ O</span>
         <span class="whatsapp-btn-line">¡QUIERO MI ASESORÍA! <i class="ph-fill ph-whatsapp-logo"></i></span>
@@ -524,4 +511,11 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
     </div>
 
     <!-- NEWSLETTER BANNER -->
-    <d
+    <div class="newsletter-banner">
+      <div>
+        <h4 style="color: var(--accent-yellow); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 4px;">Join the Lionatural Nation</h4>
+        <p style="font-size: 0.75rem; color: #9ca3af;">Get 10% off your first order and be the first to know about new drops.</p>
+      </div>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Enter your email address">
+        <button class="newsletter-btn">Subs
