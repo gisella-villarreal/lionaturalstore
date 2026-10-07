@@ -37,8 +37,8 @@ header {
   align-items: center;
   z-index: 10;
 }
-.logo { display: flex; align-items: center; gap: 10px; font-size: 1rem; font-weight: 700; letter-spacing: 1px; color: var(--text-light); text-decoration: none; }
-.logo-box { background: var(--accent); width: 25px; height: 40px; display: flex; align-items: center; justify-content: center; }
+.logo { display: flex; align-items: center; gap: 12px; font-size: 1.2rem; font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 1px; color: var(--accent); text-decoration: none; }
+.logo img { height: 35px; width: auto; object-fit: contain; }
 .back-to-store { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 600; color: var(--text-muted); text-decoration: none; letter-spacing: 1px; transition: color 0.3s; }
 .back-to-store:hover { color: var(--accent); }
 .back-to-store i { font-size: 1.2rem; }
@@ -51,13 +51,11 @@ header {
   display: flex;
   align-items: center;
   padding: 0 10%;
-  /* IMAGEN DE FONDO ACTUALIZADA */
   background: linear-gradient(to right, rgba(5,5,5,1) 10%, rgba(5,5,5,0.4) 60%), url('1791405352477.jpg') center/cover no-repeat;
   border-bottom: 1px solid var(--border-color);
 }
 .hero-content { position: relative; z-index: 2; margin-top: -50px; max-width: 850px; }
-/* TAMAÑO DE LETRA AJUSTADO PARA LA FRASE LARGA */
-.hero-content h1 { font-size: 4.5rem; font-weight: 700; line-height: 1.1; font-style: italic; letter-spacing: 1px; }
+.hero-content h1 { font-size: 4.5rem; font-weight: 700; line-height: 1.1; font-style: italic; letter-spacing: 1px; color: var(--text-light); }
 .hero-line-2 { display: flex; align-items: center; gap: 20px; margin-top: 5px; }
 .accent-line { width: 50px; height: 5px; background: var(--accent); flex-shrink: 0; }
 .hero-desc { margin-top: 30px; font-size: 0.75rem; color: var(--text-muted); max-width: 350px; display: flex; gap: 15px; }
@@ -165,12 +163,12 @@ header {
 .metric-box p { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; }
 .metric-center { width: 120px; height: 120px; border: 4px solid var(--accent); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 3.5rem; color: var(--accent); box-shadow: 0 0 20px rgba(246, 185, 0, 0.1); }
 
-/* CONTACT SECTION */
-.contact-section { padding: 80px 20px 60px; background: var(--bg-main); }
-.contact-container { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px; }
-.c-item { display: flex; align-items: center; justify-content: center; gap: 20px; }
-.c-icon { font-size: 2.2rem; color: var(--text-muted); }
-.c-text { text-align: left; width: 220px; }
+/* CONTACT SECTION - ALINEACIÓN PERFECTA */
+.contact-section { padding: 80px 20px 60px; background: var(--bg-main); text-align: center; }
+.contact-container { display: flex; flex-direction: column; align-items: center; gap: 30px; margin: 0 auto; max-width: 500px; }
+.c-item { display: flex; align-items: center; justify-content: flex-start; gap: 20px; width: 100%; max-width: 280px; }
+.c-icon { font-size: 2.2rem; color: var(--text-muted); width: 40px; text-align: center; flex-shrink: 0; }
+.c-text { text-align: left; }
 .c-text h4 { font-size: 0.6rem; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 2px; }
 .c-text p { font-size: 0.9rem; font-weight: 600; color: var(--text-light); }
 
@@ -182,19 +180,18 @@ footer { border-top: 1px solid var(--border-color); padding: 30px 50px; display:
 .f-social { display: flex; align-items: center; gap: 20px; }
 .f-social i { font-size: 1.1rem; cursor: pointer; transition: color 0.2s; }
 .f-social i:hover { color: var(--text-light); }
-.f-logo { display: flex; align-items: center; gap: 10px; color: var(--accent); font-family: 'Oswald', sans-serif; font-size: 1rem; }
+.f-logo { display: flex; align-items: center; gap: 10px; font-family: 'Oswald', sans-serif; font-size: 1.2rem; color: var(--accent); letter-spacing: 1px; }
+.f-logo img { height: 28px; width: auto; object-fit: contain; }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .hero-content h1 { font-size: 3.5rem; }
+  .hero-content h1 { font-size: 4rem; }
 }
 @media (max-width: 768px) {
   header { padding: 20px 25px; }
   .header-right { display: none; }
   
-  /* AJUSTE PARA EL TEXTO DEL HERO EN CELULAR */
   .hero-content h1 { font-size: 2.5rem; line-height: 1.2; }
-  
   .hero-desc { flex-direction: column; gap: 10px; }
   .hero-desc-line { width: 40px; height: 2px; }
   
@@ -210,8 +207,6 @@ footer { border-top: 1px solid var(--border-color); padding: 30px 50px; display:
   .metric-box p { font-size: 0.6rem; }
   .metric-center { width: 70px; height: 70px; border-width: 3px; font-size: 2rem; }
 
-  .c-item { justify-content: flex-start; gap: 15px; margin-left: auto; margin-right: auto; }
-  .c-text { width: auto; }
   .c-text p { font-size: 0.8rem; }
   
   footer { flex-direction: column; gap: 20px; text-align: center; }
@@ -223,9 +218,7 @@ footer { border-top: 1px solid var(--border-color); padding: 30px 50px; display:
 <!-- HEADER -->
 <header>
   <a href="index.html" class="logo">
-    <div class="logo-box">
-      <img src="1000218780.png" alt="Logo Juls Salas" style="width: 20px; filter: brightness(0); object-fit: contain;" onerror="this.style.display='none'">
-    </div>
+    <img src="1000218780.png" alt="Logo Juls Salas">
     JULS SALAS
   </a>
   <a href="index.html" class="back-to-store">
@@ -252,15 +245,14 @@ footer { border-top: 1px solid var(--border-color); padding: 30px 50px; display:
 <!-- ABOUT SECTION -->
 <section class="about-section">
   <div class="about-img">
-    <!-- IMAGEN SOBRE MÍ ACTUALIZADA -->
-    <img src="1791404951068.jpg" alt="Juls Salas">
+    <img src="1000223115.png" alt="Juls Salas">
   </div>
   <div class="about-content">
     <div class="section-pre">Bienvenido a mi equipo</div>
     <h2 class="section-title">SOBRE MÍ</h2>
     
     <div class="stats-row">
-      <div class="stat-item"><div class="stat-val">3</div><div class="stat-lbl">Campeonatos</div></div>
+      <div class="stat-item"><div class="stat-val">27</div><div class="stat-lbl">Años</div></div>
       <div class="stat-item"><div class="stat-val">7+</div><div class="stat-lbl">Años Exp.</div></div>
       <div class="stat-item"><div class="stat-val">300+</div><div class="stat-lbl">Clientes</div></div>
     </div>
@@ -399,13 +391,11 @@ footer { border-top: 1px solid var(--border-color); padding: 30px 50px; display:
     <i class="ph ph-facebook-logo"></i>
   </div>
   <div class="f-logo">
-    <div class="logo-box">
-      <img src="1000218780.png" alt="Logo Juls Salas" style="width: 20px; filter: brightness(0); object-fit: contain;" onerror="this.style.display='none'">
-    </div>
+    <img src="1000218780.png" alt="Logo Juls Salas">
     JULS SALAS
   </div>
 </footer>
 
 </body>
-    </html>
-  
+      </html>
+      
