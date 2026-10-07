@@ -37,11 +37,10 @@ header {
   align-items: center;
   z-index: 10;
 }
-.logo { display: flex; align-items: center; gap: 15px; font-size: 1rem; font-weight: 700; letter-spacing: 1px; color: var(--text-light); text-decoration: none; }
-.logo-box { background: var(--accent); width: 25px; height: 40px; display: flex; align-items: center; justify-content: center; }
-.header-right { display: flex; align-items: center; gap: 30px; font-size: 0.8rem; font-weight: 600; color: var(--text-muted); }
-.header-right span:hover { color: var(--accent); cursor: pointer; }
-.menu-icon { font-size: 1.8rem; color: var(--text-light); cursor: pointer; }
+.logo { display: flex; align-items: center; gap: 10px; font-size: 1rem; font-weight: 700; letter-spacing: 1px; color: var(--text-light); text-decoration: none; }
+.back-to-store { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 600; color: var(--text-muted); text-decoration: none; letter-spacing: 1px; transition: color 0.3s; }
+.back-to-store:hover { color: var(--accent); }
+.back-to-store i { font-size: 1.2rem; }
 
 /* HERO SECTION */
 .hero {
@@ -78,14 +77,13 @@ header {
   color: #000;
   border: 10px solid var(--bg-main);
   z-index: 5;
-  cursor: pointer;
 }
 
 /* ABOUT SECTION */
 .about-section {
   max-width: 1100px;
-  margin: 100px auto 0;
-  padding: 40px 20px;
+  margin: 50px auto 0; /* Espacio negro reducido */
+  padding: 20px 20px 40px;
   display: flex;
   flex-wrap: wrap;
   gap: 60px;
@@ -163,22 +161,14 @@ header {
 .metric-box p { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; }
 .metric-center { width: 120px; height: 120px; border: 4px solid var(--accent); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 3.5rem; color: var(--accent); box-shadow: 0 0 20px rgba(246, 185, 0, 0.1); }
 
-/* CONTACT SECTION */
-.contact-section { padding: 80px 20px; background: var(--bg-main); }
-.contact-container { max-width: 900px; margin: 0 auto; display: flex; gap: 60px; flex-wrap: wrap; }
-.contact-info { flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 40px; padding-top: 20px; border-right: 1px solid var(--border-color); padding-right: 40px; }
-/* Alineación fija del contacto */
-.c-item { display: flex; justify-content: flex-end; align-items: center; gap: 20px; text-align: right; }
-.c-text { display: flex; flex-direction: column; justify-content: center; }
+/* CONTACT SECTION - LIMPIA Y CENTRADA */
+.contact-section { padding: 80px 20px 60px; background: var(--bg-main); }
+.contact-container { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px; }
+.c-item { display: flex; align-items: center; justify-content: center; gap: 20px; }
+.c-icon { font-size: 2.2rem; color: var(--text-muted); }
+.c-text { text-align: left; width: 220px; }
 .c-text h4 { font-size: 0.6rem; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 2px; }
-.c-text p { font-size: 0.85rem; font-weight: 600; color: var(--text-light); }
-.c-icon { font-size: 1.5rem; color: var(--text-muted); flex-shrink: 0; }
-
-.contact-form { flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 30px; }
-.contact-form .row { display: flex; gap: 30px; }
-.contact-form input, .contact-form textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--border-color); color: var(--text-light); padding: 10px 0; font-size: 0.75rem; font-family: 'Open Sans', sans-serif; outline: none; transition: border-color 0.3s; }
-.contact-form input:focus, .contact-form textarea:focus { border-bottom-color: var(--accent); }
-.contact-form input::placeholder, .contact-form textarea::placeholder { color: #555; text-transform: uppercase; letter-spacing: 1px; }
+.c-text p { font-size: 0.9rem; font-weight: 600; color: var(--text-light); }
 
 /* FOOTER */
 footer { border-top: 1px solid var(--border-color); padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
@@ -193,19 +183,13 @@ footer { border-top: 1px solid var(--border-color); padding: 30px 50px; display:
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .hero-content h1 { font-size: 4rem; }
-  .contact-container { flex-direction: column; }
-  .contact-info { border-right: none; padding-right: 0; }
-  .c-item { justify-content: center; flex-direction: row; text-align: left; }
-  .c-text { align-items: flex-start; }
 }
 @media (max-width: 768px) {
-  .header-right { display: none; }
   header { padding: 20px 25px; }
   .hero-content h1 { font-size: 3.5rem; }
   .hero-desc { flex-direction: column; gap: 10px; }
   .hero-desc-line { width: 40px; height: 2px; }
   
-  /* FORZAR ESTADÍSTICAS EN UNA LÍNEA (MODIFICACIÓN 1) */
   .stats-row { flex-direction: row; justify-content: space-around; gap: 10px; }
   .stat-item { width: auto; }
   .stat-val { font-size: 1.4rem; }
@@ -213,16 +197,13 @@ footer { border-top: 1px solid var(--border-color); padding: 30px 50px; display:
 
   .quick-form input { width: 100%; }
   
-  /* FORZAR MÉTRICAS EN UNA LÍNEA (MODIFICACIÓN 2) */
   .metrics-flex { flex-direction: row; justify-content: center; gap: 15px; }
   .metric-box h2 { font-size: 2.2rem; }
   .metric-box p { font-size: 0.6rem; }
   .metric-center { width: 70px; height: 70px; border-width: 3px; font-size: 2rem; }
 
-  /* CONTACTO ALINEADO Y CENTRADO EN MÓVIL (MODIFICACIÓN 3) */
-  .contact-info { gap: 30px; align-items: flex-start; padding-left: 20px; }
-  .c-item { justify-content: flex-start; gap: 15px; }
-  .contact-form .row { flex-direction: column; }
+  .c-item { gap: 15px; }
+  .c-text p { font-size: 0.8rem; }
   
   footer { flex-direction: column; gap: 20px; text-align: center; }
 }
@@ -233,15 +214,12 @@ footer { border-top: 1px solid var(--border-color); padding: 30px 50px; display:
 <!-- HEADER -->
 <header>
   <a href="index.html" class="logo">
-    <div class="logo-box">
-      <img src="1000222954.png" alt="Logo" style="width: 20px; filter: brightness(0); object-fit: contain;" onerror="this.style.display='none'">
-    </div>
+    <img src="1000218780.png" alt="Logo Juls Salas" style="height: 35px; object-fit: contain;" onerror="this.style.display='none'">
     JULS SALAS
   </a>
-  <div class="header-right">
-    <a href="index.html" style="color: var(--text-muted); text-decoration: none;"><span>VOLVER A LIONATURAL</span></a>
-  </div>
-  <i class="ph ph-list menu-icon"></i>
+  <a href="index.html" class="back-to-store">
+    <i class="ph ph-arrow-left"></i> LIONATURAL STORE
+  </a>
 </header>
 
 <!-- HERO SECTION -->
@@ -366,45 +344,31 @@ footer { border-top: 1px solid var(--border-color); padding: 30px 50px; display:
   </div>
 </section>
 
-<!-- CONTACT SECTION -->
+<!-- CONTACT SECTION (LIMPIA Y SIMÉTRICA) -->
 <section class="contact-section">
   <div class="section-pre">Contáctame</div>
   <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 60px;">PARA MÁS INFORMACIÓN</h2>
   
   <div class="contact-container">
-    <div class="contact-info">
-      <div class="c-item">
-        <i class="ph ph-whatsapp-logo c-icon"></i>
-        <div class="c-text">
-          <h4>WHATSAPP</h4>
-          <p>+57 300 123 4567</p>
-        </div>
-      </div>
-      <div class="c-item">
-        <i class="ph ph-envelope-simple c-icon"></i>
-        <div class="c-text">
-          <h4>EMAIL</h4>
-          <p>asesorias@lionatural.com</p>
-        </div>
-      </div>
-      <div class="c-item">
-        <i class="ph ph-map-pin c-icon"></i>
-        <div class="c-text">
-          <h4>UBICACIÓN</h4>
-          <p>Asesorías Online & Presencial</p>
-        </div>
+    <div class="c-item">
+      <i class="ph ph-whatsapp-logo c-icon"></i>
+      <div class="c-text">
+        <h4>WHATSAPP</h4>
+        <p>+57 300 123 4567</p>
       </div>
     </div>
-    
-    <div class="contact-form">
-      <div class="row">
-        <input type="text" placeholder="NOMBRE">
-        <input type="text" placeholder="WHATSAPP">
+    <div class="c-item">
+      <i class="ph ph-envelope-simple c-icon"></i>
+      <div class="c-text">
+        <h4>EMAIL</h4>
+        <p>asesorias@lionatural.com</p>
       </div>
-      <input type="email" placeholder="CORREO ELECTRÓNICO">
-      <textarea placeholder="MENSAJE O META PRINCIPAL" rows="3"></textarea>
-      <div style="text-align: right; margin-top: 10px;">
-        <button type="button" class="btn-accent" style="padding: 12px 40px; font-size: 0.75rem;">ENVIAR MENSAJE</button>
+    </div>
+    <div class="c-item">
+      <i class="ph ph-map-pin c-icon"></i>
+      <div class="c-text">
+        <h4>UBICACIÓN</h4>
+        <p>Asesorías Online & Presencial</p>
       </div>
     </div>
   </div>
@@ -429,5 +393,5 @@ footer { border-top: 1px solid var(--border-color); padding: 30px 50px; display:
 </footer>
 
 </body>
-    </html>
-        
+  </html>
+  
