@@ -38,6 +38,7 @@ header {
   z-index: 10;
 }
 .logo { display: flex; align-items: center; gap: 10px; font-size: 1rem; font-weight: 700; letter-spacing: 1px; color: var(--text-light); text-decoration: none; }
+.logo-box { background: var(--accent); width: 25px; height: 40px; display: flex; align-items: center; justify-content: center; }
 .back-to-store { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 600; color: var(--text-muted); text-decoration: none; letter-spacing: 1px; transition: color 0.3s; }
 .back-to-store:hover { color: var(--accent); }
 .back-to-store i { font-size: 1.2rem; }
@@ -77,12 +78,13 @@ header {
   color: #000;
   border: 10px solid var(--bg-main);
   z-index: 5;
+  cursor: pointer;
 }
 
 /* ABOUT SECTION */
 .about-section {
   max-width: 1100px;
-  margin: 50px auto 0; /* Espacio negro reducido */
+  margin: 50px auto 0;
   padding: 20px 20px 40px;
   display: flex;
   flex-wrap: wrap;
@@ -161,7 +163,7 @@ header {
 .metric-box p { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; }
 .metric-center { width: 120px; height: 120px; border: 4px solid var(--accent); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 3.5rem; color: var(--accent); box-shadow: 0 0 20px rgba(246, 185, 0, 0.1); }
 
-/* CONTACT SECTION - LIMPIA Y CENTRADA */
+/* CONTACT SECTION - LIMPIA Y SIMÉTRICA */
 .contact-section { padding: 80px 20px 60px; background: var(--bg-main); }
 .contact-container { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px; }
 .c-item { display: flex; align-items: center; justify-content: center; gap: 20px; }
@@ -186,6 +188,7 @@ footer { border-top: 1px solid var(--border-color); padding: 30px 50px; display:
 }
 @media (max-width: 768px) {
   header { padding: 20px 25px; }
+  .header-right { display: none; }
   .hero-content h1 { font-size: 3.5rem; }
   .hero-desc { flex-direction: column; gap: 10px; }
   .hero-desc-line { width: 40px; height: 2px; }
@@ -202,7 +205,8 @@ footer { border-top: 1px solid var(--border-color); padding: 30px 50px; display:
   .metric-box p { font-size: 0.6rem; }
   .metric-center { width: 70px; height: 70px; border-width: 3px; font-size: 2rem; }
 
-  .c-item { gap: 15px; }
+  .c-item { justify-content: flex-start; gap: 15px; margin-left: auto; margin-right: auto; }
+  .c-text { width: auto; }
   .c-text p { font-size: 0.8rem; }
   
   footer { flex-direction: column; gap: 20px; text-align: center; }
@@ -214,7 +218,9 @@ footer { border-top: 1px solid var(--border-color); padding: 30px 50px; display:
 <!-- HEADER -->
 <header>
   <a href="index.html" class="logo">
-    <img src="1000218780.png" alt="Logo Juls Salas" style="height: 35px; object-fit: contain;" onerror="this.style.display='none'">
+    <div class="logo-box">
+      <img src="1000218780.png" alt="Logo Juls Salas" style="width: 20px; filter: brightness(0); object-fit: contain;" onerror="this.style.display='none'">
+    </div>
     JULS SALAS
   </a>
   <a href="index.html" class="back-to-store">
@@ -344,7 +350,7 @@ footer { border-top: 1px solid var(--border-color); padding: 30px 50px; display:
   </div>
 </section>
 
-<!-- CONTACT SECTION (LIMPIA Y SIMÉTRICA) -->
+<!-- CONTACT SECTION -->
 <section class="contact-section">
   <div class="section-pre">Contáctame</div>
   <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 60px;">PARA MÁS INFORMACIÓN</h2>
@@ -377,7 +383,6 @@ footer { border-top: 1px solid var(--border-color); padding: 30px 50px; display:
 <!-- FOOTER -->
 <footer>
   <div class="f-links">
-    <span>LINKS</span>
     <a href="index.html">TIENDA LIONATURAL</a>
     <a href="#">SOBRE MÍ</a>
   </div>
@@ -388,10 +393,13 @@ footer { border-top: 1px solid var(--border-color); padding: 30px 50px; display:
     <i class="ph ph-facebook-logo"></i>
   </div>
   <div class="f-logo">
-    <i class="ph-fill ph-barbell"></i> JULS SALAS
+    <div class="logo-box">
+      <img src="1000218780.png" alt="Logo Juls Salas" style="width: 20px; filter: brightness(0); object-fit: contain;" onerror="this.style.display='none'">
+    </div>
+    JULS SALAS
   </div>
 </footer>
 
 </body>
   </html>
-  
+        
