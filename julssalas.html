@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Fitness Trainer</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<style>
+:root {
+  --bg-main: #0a0a0a;
+  --bg-sec: #111111;
+  --accent-red: #ff2a2a;
+  --text-light: #ffffff;
+  --text-muted: #888888;
+  --border-color: #333333;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+  background-color: var(--bg-main); 
+  color: var(--text-light); 
+  font-family: 'Plus Jakarta Sans', sans-serif; 
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+
+/* HEADER */
+header {
+  position: absolute;
+  top: 0; width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+.logo { font-family: 'Oswald', sans-serif; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.logo-icon { background: var(--accent-red); width: 15px; height: 15px; display: inline-block; }
+.menu-icon { font-size: 1.5rem; cursor: pointer; color: var(--text-light); }
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  background: linear-gradient(to right, rgba(10,10,10,1) 0%, rgba(10,10,10,0.4) 100%), url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop') center/cover;
+}
+.hero-content h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+.hero-content .line-2 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.hero-content .red-line { width: 60px; height: 5px; background: var(--accent-red); }
+.hero-desc {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  max-width: 400px;
+}
+
+/* SECTION TITLES */
+.section-subtitle { text-align: center; font-size: 0.7rem; color: var(--accent-red); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-top: 60px; }
+.section-title { text-align: center; font-size: 2rem; font-weight: 700; margin-bottom: 40px; }
+
+/* ABOUT SECTION */
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  gap: 40px;
+}
+.about-img {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+.about-img img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.about-info {
+  flex: 1;
+  min-width: 300px;
+}
+.stats-row {
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+.stat-item { text-align: center; }
+.stat-val { font-size: 1.5rem; font-weight: 700; font-family: 'Oswald', sans-serif; }
+.stat-lbl { font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+.about-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.about-name-row h3 { color: var(--accent-red); font-size: 1.2rem; letter-spacing: 1px; }
+.social-icons { display: flex; gap: 10px; font-size: 1.2rem; color: var(--text-muted); }
+.social-icons i { cursor: pointer; transition: color 0.2s; }
+.social-icons i:hover { color: var(--accent-red); }
+
+.about-text { font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 20px; }
+.read-more { color: var(--accent-red); font-size: 0.75rem; font-weight: 700; text-decoration: none; text-transform: uppercase; }
+
+.video-grid { display: flex; gap: 10px; margin-top: 30px; }
+.vid-thumb { width: 80px; height: 60px; background: #222; border-radius: 4px; position: relative; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+.vid-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+.vid-thumb i { position: absolute; color: white; font-size: 1.2rem; }
+
+/* QUICK FORM */
+.quick-form-section {
+  background: var(--bg-sec);
+  padding: 40px 20px;
+  text-align: center;
+}
+.quick-form {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 20px auto 0;
+}
+.quick-form input {
+  background: var(--text-light);
+  border: none;
+  padding: 12px 20px;
+  font-size: 0.85rem;
+  width: 220px;
+  outline: none;
+}
+.btn-red {
+  background: var(--accent-red);
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+.btn-red:hover { background: #d41a1a; }
+
+/* WHAT WE DO SECTION */
+.services-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: radial-gradient(circle at center, #1a1a1a 0%, var(--bg-main) 100%);
+}
+.service-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.srv-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.srv-circle {
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--accent-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--accent-red);
+  position: relative;
+}
+.srv-circle::before {
+  content: ''; position: absolute; top: -5px; left: -5px; right: -5px; bottom: -5px;
+  border: 1px solid rgba(255, 42, 42, 0.3); border-radius: 50%;
+}
+.srv-name { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
+.metrics-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 60px;
+}
+.metric { text-align: center; }
+.metric h2 { font-size: 3.5rem; color: var(--text-light); line-height: 1; }
+.metric p { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+.metric-center-icon {
+  width: 100px;
+  height: 100px;
+  border: 4px solid var(--accent-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--accent-red);
+}
+
+/* CONTACT SECTION */
+.contact-section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+.contact-info { display: flex; flex-direction: column; gap: 30px; }
+.contact-item { text-align: right; }
+.contact-item h4 { font-size: 0.6rem; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 5px; }
+.contact-item p { font-size: 0.9rem; font-weight: 600; }
+.contact-item i { font-size: 1.2rem; color: var(--text-muted); margin-top: 5px; }
+
+.contact-form { display: flex; flex-direction: column; gap: 20px; }
+.form-row { display: flex; gap: 20px; }
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-light);
+  padding: 10px 0;
+  font-size: 0.8rem;
+  outline: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.contact-form input:focus, .contact-form textarea:focus { border-bottom-color: var(--accent-red); }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border-color);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { color: var(--text-muted); text-decoration: none; }
+.footer-social { display: flex; gap: 15px; font-size: 1rem; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 3.5rem; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-item { text-align: center; }
+  .form-row { flex-direction: column; gap: 20px; }
+  footer { flex-direction: column; gap: 15px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <span class="logo-icon"></span> THE FITNESS
+  </div>
+  <i class="ph ph-list menu-icon"></i>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>PUSH</h1>
+    <div class="line-2">
+      <div class="red-line"></div>
+      <h1>YOURSELF</h1>
+    </div>
+    <p class="hero-desc">Winner of the international championship "Fit Girl" in the Miss Bikini nomination.</p>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<div class="section-subtitle">Welcome to my gym</div>
+<h2 class="section-title">ABOUT ME</h2>
+
+<section class="about-section">
+  <div class="about-img">
+    <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop" alt="Trainer Profile">
+  </div>
+  <div class="about-info">
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-val">27</div>
+        <div class="stat-lbl">Age</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">5' 6"</div>
+        <div class="stat-lbl">Height</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">103.6</div>
+        <div class="stat-lbl">Weight</div>
+      </div>
+    </div>
+    
+    <div class="about-name-row">
+      <h3>ANNA SMITH</h3>
+      <div class="social-icons">
+        <i class="ph-fill ph-facebook-logo"></i>
+        <i class="ph-fill ph-instagram-logo"></i>
+        <i class="ph-fill ph-twitter-logo"></i>
+      </div>
+    </div>
+    
+    <p class="about-text">
+      I'm a personal trainer, group fitness instructor, master-trainer, writer, blogger, and fitness lover. I love doing cross-training, lifting heavy weights, and trail running. Looking at me, you'll fully understand my attitude to fitness and well-being.
+      <br><br>
+      My body will clearly demonstrate the rules that improve my health, performance, and body composition while keeping my inner balance perfect.
+    </p>
+    <a href="#" class="read-more">Read More</a>
+    
+    <div class="video-grid">
+      <div class="vid-thumb">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=300&auto=format&fit=crop" alt="vid1">
+        <i class="ph-fill ph-play-circle"></i>
+      </div>
+      <div class="vid-thumb">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=300&auto=format&fit=crop" alt="vid2">
+        <i class="ph-fill ph-play-circle"></i>
+      </div>
+      <div class="vid-thumb">
+        <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=300&auto=format&fit=crop" alt="vid3">
+        <i class="ph-fill ph-play-circle"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK FORM SECTION -->
+<section class="quick-form-section">
+  <div class="section-subtitle" style="margin-top: 0;">Ready to start?</div>
+  <p style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 5px;">Leave your request for personal programme</p>
+  
+  <form class="quick-form">
+    <input type="text" placeholder="NAME">
+    <input type="text" placeholder="PHONE">
+    <button type="button" class="btn-red">SEND</button>
+  </form>
+</section>
+
+<!-- WHAT WILL WE DO SECTION -->
+<section class="services-section">
+  <h2 class="section-title" style="font-size: 1.5rem;">WHAT WILL WE DO?</h2>
+  <div class="section-subtitle" style="margin-top: -30px; margin-bottom: 30px;">+ TIME + CALORIES</div>
+  
+  <div class="service-icons">
+    <div class="srv-item">
+      <div class="srv-circle"><i class="ph ph-barbell"></i></div>
+      <div class="srv-name">Workout</div>
+    </div>
+    <div class="srv-item">
+      <div class="srv-circle"><i class="ph ph-sneaker"></i></div>
+      <div class="srv-name">Running</div>
+    </div>
+    <div class="srv-item">
+      <div class="srv-circle"><i class="ph ph-swimmer"></i></div>
+      <div class="srv-name">Swimming</div>
+    </div>
+    <div class="srv-item">
+      <div class="srv-circle"><i class="ph ph-person-simple-lotus"></i></div>
+      <div class="srv-name">Yoga</div>
+    </div>
+  </div>
+
+  <div class="metrics-row">
+    <div class="metric">
+      <h2>- 477</h2>
+      <p>Calories</p>
+    </div>
+    <div class="metric-center-icon">
+      <i class="ph-fill ph-drop"></i>
+    </div>
+    <div class="metric">
+      <h2>60</h2>
+      <p>Minutes</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="section-subtitle" style="margin-top: 0;">Contact me</div>
+  <p style="text-align: center; font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 40px;">For more information</p>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <h4>PHONE</h4>
+        <p>8 (812) - 974 - 57 - 05</p>
+        <i class="ph ph-phone"></i>
+      </div>
+      <div class="contact-item">
+        <h4>EMAIL</h4>
+        <p>FINEFITNESS@GMAIL.COM</p>
+        <i class="ph ph-envelope-simple"></i>
+      </div>
+      <div class="contact-item">
+        <h4>ADDRESS</h4>
+        <p>SAINT-PETERSBURG, ISAAC SQUARE 4-9</p>
+        <i class="ph ph-map-pin"></i>
+      </div>
+    </div>
+    
+    <form class="contact-form">
+      <div class="form-row">
+        <input type="text" placeholder="NAME">
+        <input type="text" placeholder="PHONE">
+      </div>
+      <input type="email" placeholder="E-MAIL">
+      <textarea placeholder="MESSAGE" rows="4"></textarea>
+      <div style="text-align: right;">
+        <button type="button" class="btn-red" style="padding: 10px 30px; font-size: 0.7rem;">SEND MESSAGE</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <span>LINKS</span>
+    <a href="#">ABOUT ME</a>
+    <a href="#">VIDEOS</a>
+  </div>
+  <div class="footer-social">
+    <span style="margin-right: 10px;">FOLLOW ME</span>
+    <i class="ph ph-facebook-logo"></i>
+    <i class="ph ph-instagram-logo"></i>
+    <i class="ph ph-twitter-logo"></i>
+    <i class="ph ph-youtube-logo"></i>
+  </div>
+</footer>
+
+</body>
+          </html>
+          
