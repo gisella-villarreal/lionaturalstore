@@ -356,5 +356,204 @@ header {
 .newsletter-btn:hover { background: var(--accent-yellow-hover); }
 
 /* FOOTER */
-footer { background:
-  
+footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; font-size: 0.75rem; border-top: 4px solid var(--accent-yellow); }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; margin-bottom: 30px; }
+.footer-grid h4 { color: white; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; margin-bottom: 12px; }
+.footer-grid ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.footer-grid ul li { cursor: pointer; }
+.footer-grid ul li:hover { color: white; }
+.footer-logo { height: 65px; width: auto; max-width: 220px; object-fit: contain; margin-bottom: 15px; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+
+/* RESPONSIVE MÓVIL Y ESCRITORIO */
+@media (min-width: 768px) {
+  .products-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .cat-circle-img { width: 80px; height: 80px; font-size: 2rem; }
+  .cat-circle-name { font-size: 0.75rem; }
+}
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 2.1rem; }
+  .nav-menu { display: none; }
+  header { padding: 12px 15px; }
+  .brand-logo { height: 65px; } 
+  .newsletter-banner { flex-direction: column; text-align: center; }
+  .trainer-image-col { min-height: 180px; } 
+  .trainer-text-col { padding: 0 15px 40px; } 
+  .trainer-text-col h2 { font-size: 1.25rem; margin-bottom: 8px; }
+  .trainer-text-col h3 { font-size: 1rem; margin-bottom: 12px; }
+  .trainer-text-col p { font-size: 0.8rem; margin-bottom: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- PANTALLA DE CARGA (MÁXIMO 1.8 SEGUNDOS) -->
+<div id="splash-screen">
+  <img src="1791315196144.jpg" alt="Lionatural Store" class="splash-logo">
+</div>
+
+<div class="site-wrapper">
+  <!-- TOP BAR CON ENVÍOS GRATIS -->
+  <div class="top-bar">
+    <div>🚚 Por compras mayores a $100.000 COP envíos gratis</div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="logo-area">
+      <img src="1791315196144.jpg" alt="Logo" class="brand-logo">
+    </a>
+    <ul class="nav-menu">
+      <li class="active">Home</li>
+      <li>Shop</li>
+      <li>Categories</li>
+      <li>Brands</li>
+      <li>Offers</li>
+      <li>Blog</li>
+      <li>Contact</li>
+    </ul>
+    <div class="header-right">
+      <div class="search-box-top">
+        <i class="ph ph-magnifying-glass" style="color: var(--text-muted);"></i>
+        <input type="text" placeholder="Search supplements...">
+      </div>
+      <div class="cart-icon-btn">
+        <i class="ph ph-shopping-cart"></i>
+        <span class="cart-badge">3</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>FUEL YOUR <span>STRENGTH</span></h1>
+      <p>Premium Supplements for Performance, Recovery & Everyday Fitness.</p>
+      <button class="hero-btn">SHOP NOW <i class="ph ph-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <!-- FEATURES BAR -->
+  <div class="features-bar">
+    <div class="feature-item">
+      <i class="ph ph-shield-check"></i>
+      <div>
+        <h4>100% Authentic</h4>
+        <p>Genuine Products Only</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <i class="ph ph-truck"></i>
+      <div>
+        <h4>Fast Delivery</h4>
+        <p>On Time, Every Time</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <i class="ph ph-lock-key"></i>
+      <div>
+        <h4>Secure Payment</h4>
+        <p>100% Safe & Secure</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <i class="ph ph-headset"></i>
+      <div>
+        <h4>Expert Support</h4>
+        <p>We're Here to Help</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOP BY CATEGORY -->
+  <div class="section-container">
+    <h2 class="section-main-title">Shop By Category</h2>
+    <div class="categories-container">
+      <a href="#" class="category-circle-item">
+        <div class="cat-circle-img"><i class="ph-fill ph-jar"></i></div>
+        <div class="cat-circle-name">Protein</div>
+      </a>
+      <a href="#" class="category-circle-item">
+        <div class="cat-circle-img"><i class="ph-fill ph-lightning"></i></div>
+        <div class="cat-circle-name">Pre-Workout</div>
+      </a>
+      <a href="#" class="category-circle-item">
+        <div class="cat-circle-img"><i class="ph-fill ph-capsule"></i></div>
+        <div class="cat-circle-name">Aminos</div>
+      </a>
+      <a href="#" class="category-circle-item">
+        <div class="cat-circle-img"><i class="ph-fill ph-drop"></i></div>
+        <div class="cat-circle-name">Vitamins</div>
+      </a>
+      <a href="#" class="category-circle-item">
+        <div class="cat-circle-img"><i class="ph-fill ph-cup"></i></div>
+        <div class="cat-circle-name">Gear</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- TOP SELLING PRODUCTS -->
+  <div class="section-container" style="padding-top: 0; padding-bottom: 0;">
+    <div class="products-header-row">
+      <h2 class="section-main-title" style="margin-bottom: 0; text-align: left;">Top Selling Products</h2>
+      <a href="#" style="font-size: 0.75rem; font-weight: 800; color: var(--text-main); text-decoration: none;">VIEW ALL →</a>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <span class="prod-badge">BEST SELLER</span>
+        <div class="prod-img"><i class="ph-fill ph-jar"></i></div>
+        <div class="prod-title">Gold Whey Protein</div>
+        <div class="prod-weight">2kg | Chocolate</div>
+        <div class="prod-stars">★★★★★ <span>(1250)</span></div>
+        <div class="prod-price-row">
+          <span class="current-price">$249,900</span>
+        </div>
+        <button class="add-cart-btn"><i class="ph ph-shopping-cart"></i> ADD TO CART</button>
+      </div>
+      <div class="product-card">
+        <span class="prod-badge sale">20% OFF</span>
+        <div class="prod-img"><i class="ph-fill ph-capsule"></i></div>
+        <div class="prod-title">Creatine Monohydrate</div>
+        <div class="prod-weight">250g | Unflavored</div>
+        <div class="prod-stars">★★★★★ <span>(980)</span></div>
+        <div class="prod-price-row">
+          <span class="current-price">$79,900</span>
+          <span class="old-price">$99,900</span>
+        </div>
+        <button class="add-cart-btn"><i class="ph ph-shopping-cart"></i> ADD TO CART</button>
+      </div>
+      <div class="product-card">
+        <span class="prod-badge new">NEW</span>
+        <div class="prod-img"><i class="ph-fill ph-jar"></i></div>
+        <div class="prod-title">Ultimate Whey Protein</div>
+        <div class="prod-weight">2kg | Vanilla</div>
+        <div class="prod-stars">★★★★★ <span>(860)</span></div>
+        <div class="prod-price-row">
+          <span class="current-price">$229,900</span>
+        </div>
+        <button class="add-cart-btn"><i class="ph ph-shopping-cart"></i> ADD TO CART</button>
+      </div>
+      <div class="product-card">
+        <div class="prod-img"><i class="ph-fill ph-lightning"></i></div>
+        <div class="prod-title">BCAA 2:1:1</div>
+        <div class="prod-weight">300g | Fruit Punch</div>
+        <div class="prod-stars">★★★★★ <span>(720)</span></div>
+        <div class="prod-price-row">
+          <span class="current-price">$99,900</span>
+        </div>
+        <button class="add-cart-btn"><i class="ph ph-shopping-cart"></i> ADD TO CART</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== BANNER ENTRENADOR ====== -->
+  <div class="trainer-banner">
+    <div class="trainer-image-col">
+      <a href="julssalas.html" style="width: 100%; height: 100%; display: block;">
+        <img src="entrenador.jpg" alt="Entrenador Personal" onerror="this.style.display='none'">
+        <i class="ph-fill ph-user" style="font-size: 5rem; color: #333; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: -1;"></i>
+      </a>
+    </div>
+    <div class="trainer-text-col">
+      <h2>¿QUIERES RESULTADOS <br><span>REALES?</span></h2>
+      <h3>CONOCE A NUESTR
