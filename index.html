@@ -20,7 +20,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
 body { background-color: #f3f4f6; color: var(--text-main); display: flex; justify-content: center; }
 
-/* ====== SPLASH SCREEN: RÁPIDO Y PRECISO ====== */
+/* ====== SPLASH SCREEN: 100% CSS (DURA MÁXIMO 2 SEGUNDOS Y DESAPARECE AUTOMÁTICAMENTE) ====== */
 #splash-screen {
   position: fixed;
   top: 0;
@@ -29,12 +29,11 @@ body { background-color: #f3f4f6; color: var(--text-main); display: flex; justif
   height: 100vh;
   background-color: #0b0b0d;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 999999;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
-  cursor: pointer;
+  animation: hideSplash 2s forwards;
+  pointer-events: none; /* Asegura que nunca bloquee los clics a la tienda */
 }
 
 .splash-logo {
@@ -45,6 +44,7 @@ body { background-color: #f3f4f6; color: var(--text-main); display: flex; justif
   animation: roarImpact 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+/* Animación del rugido con vibración */
 @keyframes roarImpact {
   0% {
     transform: scale(0.4);
@@ -68,14 +68,28 @@ body { background-color: #f3f4f6; color: var(--text-main); display: flex; justif
   100% {
     transform: scale(1);
     opacity: 1;
-    filter: drop-shadow(0 0 10px rgba(246, 185, 0, 0.2));
   }
 }
 
-#splash-screen.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+/* Desaparición obligatoria en 2 segundos exactos */
+@keyframes hideSplash {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  75% {
+    opacity: 1;
+    visibility: visible;
+  }
+  95% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
 }
 
 .site-wrapper {
@@ -387,7 +401,7 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
 </head>
 <body>
 
-<!-- PANTALLA DE CARGA (MÁXIMO 1.8 SEGUNDOS) -->
+<!-- PANTALLA DE CARGA (DESAPARECE AUTOMÁTICAMENTE A LOS 2s POR CSS) -->
 <div id="splash-screen">
   <img src="1791315196144.jpg" alt="Lionatural Store" class="splash-logo">
 </div>
@@ -551,9 +565,4 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
     <div class="trainer-image-col">
       <a href="julssalas.html" style="width: 100%; height: 100%; display: block;">
         <img src="entrenador.jpg" alt="Entrenador Personal" onerror="this.style.display='none'">
-        <i class="ph-fill ph-user" style="font-size: 5rem; color: #333; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: -1;"></i>
-      </a>
-    </div>
-    <div class="trainer-text-col">
-      <h2>¿QUIERES RESULTADOS <br><span>REALES?</span></h2>
-      <h3>CONOCE A NUESTR
+        <i class=
