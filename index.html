@@ -20,6 +20,64 @@
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
 body { background-color: #f3f4f6; color: var(--text-main); display: flex; justify-content: center; }
 
+/* ====== SPLASH SCREEN: ZOOM IN FUERTE + VIBRACIÓN ====== */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0b0b0d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.splash-logo {
+  width: 220px;
+  max-width: 75vw;
+  height: auto;
+  object-fit: contain;
+  animation: roarImpact 2.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes roarImpact {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+    filter: drop-shadow(0 0 0px rgba(246, 185, 0, 0));
+  }
+  35% {
+    transform: scale(1.35);
+    opacity: 1;
+    filter: drop-shadow(0 0 35px rgba(246, 185, 0, 0.7));
+  }
+  /* Vibración violenta del rugido */
+  40% { transform: scale(1.30) translate(-3px, 2px) rotate(-1deg); }
+  45% { transform: scale(1.38) translate(3px, -2px) rotate(1.5deg); }
+  50% { transform: scale(1.32) translate(-2px, -3px) rotate(-1deg); }
+  55% { transform: scale(1.36) translate(2px, 3px) rotate(1deg); }
+  60% { transform: scale(1.30) translate(-2px, 1px) rotate(0deg); }
+  75% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 20px rgba(246, 185, 0, 0.4));
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba(246, 185, 0, 0.2));
+  }
+}
+
+#splash-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .site-wrapper {
   width: 100%;
   max-width: 1300px;
@@ -182,7 +240,7 @@ header {
 .add-cart-btn { background: var(--accent-yellow); color: #000; border: none; width: 100%; padding: 7px; font-weight: 800; font-size: 0.65rem; border-radius: 4px; cursor: pointer; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 4px; transition: background 0.2s; }
 .add-cart-btn:hover { background: var(--accent-yellow-hover); }
 
-/* ====== BANNER ENTRENADOR (UNA SOLA TOMA VISUAL) ====== */
+/* ====== BANNER ENTRENADOR ====== */
 .trainer-banner {
   display: flex;
   background: #000000;
@@ -200,7 +258,6 @@ header {
   min-height: 350px;
   position: relative;
 }
-/* Efecto de difuminado para celulares */
 .trainer-image-col::after {
   content: '';
   position: absolute;
@@ -305,7 +362,7 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
 .footer-grid ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
 .footer-grid ul li { cursor: pointer; }
 .footer-grid ul li:hover { color: white; }
-.footer-logo { height: 65px; width: auto; max-width: 220px; object-fit: contain; margin-bottom: 15px; } /* Tu logo transparente PNG */
+.footer-logo { height: 65px; width: auto; max-width: 220px; object-fit: contain; margin-bottom: 15px; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
 
 /* RESPONSIVE MÓVIL Y ESCRITORIO */
@@ -320,8 +377,6 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
   header { padding: 12px 15px; }
   .brand-logo { height: 65px; } 
   .newsletter-banner { flex-direction: column; text-align: center; }
-  
-  /* Ajustes específicos del banner del entrenador para celular */
   .trainer-image-col { min-height: 180px; } 
   .trainer-text-col { padding: 0 15px 40px; } 
   .trainer-text-col h2 { font-size: 1.25rem; margin-bottom: 8px; }
@@ -332,13 +387,18 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
 </head>
 <body>
 
+<!-- PANTALLA DE CARGA (ZOOM IN + VIBRACIÓN DEL LOGO) -->
+<div id="splash-screen">
+  <img src="1791315196144.jpg" alt="Lionatural Store" class="splash-logo">
+</div>
+
 <div class="site-wrapper">
   <!-- TOP BAR CON ENVÍOS GRATIS -->
   <div class="top-bar">
     <div>🚚 Por compras mayores a $100.000 COP envíos gratis</div>
   </div>
 
-  <!-- HEADER (LOGO INTACTO) -->
+  <!-- HEADER -->
   <header>
     <a href="#" class="logo-area">
       <img src="1791315196144.jpg" alt="Logo" class="brand-logo">
@@ -489,38 +549,10 @@ footer { background: var(--bg-dark); color: #9ca3af; padding: 40px 25px 20px; fo
   <!-- ====== BANNER ENTRENADOR ====== -->
   <div class="trainer-banner">
     <div class="trainer-image-col">
-      <!-- Enlaza a la página del entrenador "julssalas.html" -->
       <a href="julssalas.html" style="width: 100%; height: 100%; display: block;">
         <img src="entrenador.jpg" alt="Entrenador Personal" onerror="this.style.display='none'">
         <i class="ph-fill ph-user" style="font-size: 5rem; color: #333; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: -1;"></i>
       </a>
     </div>
     <div class="trainer-text-col">
-      <h2>¿QUIERES RESULTADOS <br><span>REALES?</span></h2>
-      <h3>CONOCE A NUESTRO <br><span>FUNDADOR Y ENTRENADOR <br>PERSONAL</span></h3>
-      <p>Manda el código 'ENTRENADOR' por WhatsApp y recibe asesoría exclusiva.</p>
-      
-      <!-- Enlace directo a tu WhatsApp -->
-      <a href="https://wa.me/573001234567?text=ENTRENADOR" target="_blank" class="whatsapp-btn">
-        <span>MANDA CÓDIGO AQUÍ O</span>
-        <span class="whatsapp-btn-line">¡QUIERO MI ASESORÍA! <i class="ph-fill ph-whatsapp-logo"></i></span>
-      </a>
-    </div>
-  </div>
-
-  <!-- TESTIMONIOS Y SUSCRIPCIÓN -->
-  <div class="testimonials-section">
-    <div style="text-align: center; margin-bottom: 25px;">
-      <h3 class="trusted-header">Trusted by Athletes. Proven in Performance.</h3>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-box">
-        <p>"Lionatural gear is my go-to for every workout. The quality, fit, and performance are next level."</p>
-        <div class="testimonial-author">— Ethan Payne (CrossFit Athlete)</div>
-      </div>
-      <div class="testimonial-box">
-        <p>"From training to recovery, Lionatural keeps me moving strong and feeling unstoppable."</p>
-        <div class="testimonial-author">— Olivia James (IFBB Pro Athlete)</div>
-      </div>
-      <div class="testimonial-box">
-        <p>"Designed for athletes. Built for winners. Lionatural delivers eve
+      <h2>¿QUIERES RESULTADOS <br><span>REALES
